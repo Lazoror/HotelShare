@@ -1,0 +1,17 @@
+﻿@model HotelShare.Web.ViewModels.Comment.CreateCommentViewModel
+
+@{
+    ViewData["Title"] = "Reply";
+}
+
+<h1>@Resources.Reply</h1>
+
+<h4>@Resources.Comment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 comment-reply-wrapper">
+        <form asp-action="Reply" method="post">
+            <partial name="_CreateComment" model="@Model" />
+        </form>
+    </div>
+</div>

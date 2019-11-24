@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HotelShare.Domain.Models.SqlModels.AccountModels.User>
+
+@{
+    ViewData["Title"] = "ManageUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Manage Users</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>Is Deleted</th>
+            <th>
+                Roles
+            </th>
+            <th>
+                Manage
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDeleted)
+                </td>
+                <td>
+                    @foreach (string role in item.Roles.Select(r => r.Role.Name))
+                    {
+                        <ul>
+                            <li>@role</li>
+                        </ul>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Change Role", "ChangeRole", "Administration", new { userEmail = item.Email }, new { @class = "btn" })
+                    @Html.ActionLink("Manage User", "DeleteUser", "Administration", new { userEmail = item.Email }, new { @class = "btn" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

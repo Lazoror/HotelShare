@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HotelShare.Web.ViewModels.Room.RoomViewModel>
+@{ ViewData["Title"] = "Index"; }
+
+<h2>@Resources.Rooms</h2>
+
+<p>
+    <a asp-action="CreateRoom" class="btn">@Resources.Create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Resources.CompanyName
+            </th>
+            <th>
+                @Resources.Description
+            </th>
+            <th>
+                @Resources.HomePage
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HomePage)
+                </td>
+                <td>
+                    @Html.ActionLink(Resources.Details, "RoomDetails", new
+                    {
+                    companyName = item.CompanyName
+                    })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</HotelShare.Web.ViewModels.Room.RoomViewModel>

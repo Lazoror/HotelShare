@@ -1,0 +1,14 @@
+﻿@using HotelShare.Domain.Enums
+
+@{
+    ViewData["Title"] = "Ban";
+}
+
+<h1>@Resources.Ban</h1>
+
+<form asp-action="Ban" method="post">
+    <select name="banDuration" asp-items="Html.GetEnumSelectList<BanDuration>()" class="form-control"></select>
+    <input type="hidden" name="commentId" value="@Model" />
+    
+    <input type="submit" name="submit" value="@Resources.Ban" class="btn btn-dark"/>
+</form>

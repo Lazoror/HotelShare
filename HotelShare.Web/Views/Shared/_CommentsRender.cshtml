@@ -1,0 +1,8 @@
+﻿@model List<HotelShare.Domain.Models.SqlModels.CommentModels.DisplayCommentModel>
+
+
+@foreach (var comments in Model)
+{
+    @await Component.InvokeAsync("CommentRender", comments)
+
+}

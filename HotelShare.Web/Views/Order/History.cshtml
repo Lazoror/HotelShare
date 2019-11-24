@@ -1,0 +1,114 @@
+﻿@model IEnumerable<HotelShare.Domain.Models.SqlModels.OrderModels.Order>
+
+@{
+    ViewData["Title"] = "History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>History</h1>
+
+<form asp-controller="Order" asp-action="History" method="post">
+    <label>Date from</label>
+    <input type="date" name="fromDate"/>
+    <label>Date to</label>
+    <input type="date" name="toDate"/>
+    
+    <input type="submit" name="submit" value="filter" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+                </td>
+                <td>
+                    @if (item.OrderDetails != null)
+                    {
+                        @foreach (var detail in item.OrderDetails)
+                        {
+                            <div>
+                                <h4>Order Detail</h4>
+                                <hr />
+                                <dl class="row">
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => detail.Id)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => detail.Id)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => detail.RoomId)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => detail.RoomId)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => detail.Price)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => detail.Price)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => detail.Quantity)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => detail.Quantity)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => detail.Discount)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => detail.Discount)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => detail.OrderId)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => detail.OrderId)
+                                    </dd>
+
+                                </dl>
+                            </div>
+                        }
+                    }
+                </td>
+
+                
+            </tr>
+
+
+
+        }
+    </tbody>
+
+
+</table>

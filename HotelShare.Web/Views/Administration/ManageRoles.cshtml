@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HotelShare.Domain.Models.SqlModels.AccountModels.Role>
+
+@{
+    ViewData["Title"] = "ManageRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Resources.ManageRoles</h1>
+
+@Html.ActionLink(@Resources.Add, "CreateRole", "Administration", new { }, new { @class = "btn btn-dark" })
+
+<div class="text-danger">
+    @Html.ValidationSummary()
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Resources.Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink(Resources.Edit, "EditRole", "Administration", new { role = item.Name }, new { @class = "btn btn-dark" })
+                    @Html.ActionLink(Resources.Delete, "DeleteRole", "Administration", new { role = item.Name }, new { @class = "btn btn-dark" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

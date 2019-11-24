@@ -1,0 +1,75 @@
+﻿@model IEnumerable<HotelShare.Web.ViewModels.Payment.OrderDetailViewModel>
+@{ ViewData["Title"] = "Index"; }
+
+@if (User.IsInRole("Manager"))
+{
+    <div>
+        @Html.ActionLink("Manage Orders", "ManageOrders", "Order", new { }, new { @class = "btn btn-dark" })
+        @Html.ActionLink("Order History", "History", "Order", new { }, new { @class = "btn btn-dark" })
+    </div>
+}
+
+
+<div id="basket-outline">
+    <div id="basket-field">
+        @await Html.PartialAsync("_BasketItems", Model)
+    </div>
+</div>
+<div class="details-checkout-btn">
+    <a asp-action="Order" asp-controller="Order" class="btn">Checkout</a>
+</div>
+
+<script>
+    var orderOutline = document.getElementById("basket-outline");
+    console.log(orderOutline);
+
+    orderOutline.addEventListener("click", async function(e) {
+        e.preventDefault();
+
+        if (e.target.id == "remove-item-btn") {
+            let hotelKeyString = e.target.getAttribute("value");
+
+            await fetch('@Url.Action("RemoveBasketItem", "Basket")',
+                {
+                    method: "POST",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ RoomId: hotelKeyString })
+                })
+                .then(async function (response) {
+                    let commentsHolder = document.getElementById("basket-field");
+                    commentsHolder.innerHTML = await response.text();
+                });
+        }
+
+        if (e.target.id == "bar-minus") {
+            let orderDetailId = e.target.getAttribute("orderId");
+
+            await fetch('@Url.Action("ChangeQuantityBasketItem", "Basket")',
+                    {
+                        method: "POST",
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ Id: orderDetailId, Quantity: -1})
+                    })
+                .then(async function (response) {
+                    let commentsHolder = document.getElementById("basket-field");
+                    commentsHolder.innerHTML = await response.text();
+                });
+        }
+
+        if (e.target.id == "bar-plus") {
+            let orderDetailId = e.target.getAttribute("orderId");
+            console.log(e.target);
+            await fetch('@Url.Action("ChangeQuantityBasketItem", "Basket")',
+                    {
+                        method: "POST",
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ Id: orderDetailId, Quantity: 1})
+                    })
+                .then(async function (response) {
+                    let commentsHolder = document.getElementById("basket-field");
+                    commentsHolder.innerHTML = await response.text();
+                });
+        }
+
+    });
+</script>

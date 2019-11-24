@@ -1,0 +1,36 @@
+﻿@using HotelShare.Web.ViewModels.Account
+@model HotelShare.Web.ViewModels.Account.EditRoleViewModel
+
+@{
+    ViewData["Title"] = "EditRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Resources.Edit</h1>
+
+<h4>@Resources.Role</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 edit-role-wrapper">
+
+        <div class="text-danger error-messages">
+            @Html.ValidationSummary()
+        </div>
+
+        <form asp-action="EditRole">
+            <div class="form-group">
+                <label>@Resources.Name</label>
+                <input asp-for="NewRoleName" class="form-control" value="@Model.NewRoleName" />
+                <span asp-validation-for="NewRoleName" class="text-danger"></span>
+            </div>
+
+            <input type="hidden" name="@nameof(Model.RoleId)" value="@Model.RoleId" />
+            <div class="form-group">
+                <input type="hidden" name="@nameof(EditRoleViewModel.Name)" value="@Model.Name" />
+                <input type="submit" value="@Resources.Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,72 @@
+﻿@model HotelShare.Domain.Models.SqlModels.FilterModels.HotelFilters
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+
+    int releaseDate = (int)Model.Filters.ReleaseDate;
+    int sortType = (int)Model.Filters.SortType;
+
+    var itemsPerPage = new List<string>
+{
+        "10",
+        "20",
+        "50",
+        "100",
+        "all"
+    };
+
+    var action = ViewContext.RouteData.Values["Action"].ToString();
+
+}
+
+<div id="hotel-outline">
+    @await Html.PartialAsync("_Games", Model)
+</div>
+
+<script>
+    var pageWrapper = document.getElementById("hotel-outline");
+    var filterbtn = document.getElementById("filter-btn");
+    console.log(filterbtn);
+
+    var filterFormEvent = document.getElementById("filterForm");
+
+
+    pageWrapper.addEventListener("click", async function (e) {
+        if (e.target.id == "filter-btn") {
+            e.preventDefault();
+
+            await sendAsync();
+        }
+
+        if (e.target.id == "pagging-btn") {
+            document.getElementById("currentPage").setAttribute("value", e.target.value);
+            e.preventDefault();
+            await sendAsync();
+        }
+    });
+
+
+    async function sendAsync() {
+        var finterForm = document.getElementById("filterForm");
+        let formCreatingData = new FormData(finterForm);
+        console.log(finterForm);
+        await fetch('@Url.Action("GetGameList", "Hotel")',
+                {
+                    method: 'POST',
+                    body: new URLSearchParams(formCreatingData)
+                })
+            .then(async function (response) {
+                let commentsHolder = document.getElementById("hotel-outline");
+                commentsHolder.innerHTML = await response.text();
+                window.history.pushState("", "", insertParamsToURL(new URLSearchParams(formCreatingData)));
+                window.scrollTo({ top: 655, behavior: 'smooth' });
+            });
+    }
+
+
+
+    function insertParamsToURL(params) {
+        return location.href.split('#')[0].split('?')[0] + '?' + params;
+    }
+</script>

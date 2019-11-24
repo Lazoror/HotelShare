@@ -1,0 +1,27 @@
+﻿@using HotelShare.Web.ViewModels.Comment
+@model HotelShare.Web.ViewModels.Comment.DisplayCommentViewModel
+
+@{
+    ViewData["Title"] = "GetGameComments";
+}
+<head>
+    <link href="~/lib/tingle/css/tingle.min.css" rel="stylesheet" />
+</head>
+
+<div class="comments">
+    @foreach (var comments in Model.Comments)
+    {
+        @await Component.InvokeAsync("CommentRender", comments)
+
+    }
+</div>
+
+<div>@await Html.PartialAsync("_AddComment", new CommentViewModel() { HotelId = @Model.HotelId })</div>
+
+<div class="tingle-demo">
+
+</div>
+
+<script src="/lib/tingle/js/tingle.min.js"></script>
+
+<script src="~/js/Modal.js"></script>

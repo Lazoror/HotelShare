@@ -1,0 +1,57 @@
+﻿@{
+    var action = ViewContext.RouteData.Values["Action"].ToString();
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hotel share</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+    </environment>
+</head>
+<body>
+
+    <partial name="_Navbar" />
+    <partial name="_CookieConsentPartial" />
+    @if (!action.Contains("Edit") && !action.Contains("Create"))
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 offset-9 language-select-wrapper">
+                    <partial name="_SelectLanguagePartial" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <partial name="_Footer" />
+
+    <environment include="Development">
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

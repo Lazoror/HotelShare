@@ -1,0 +1,21 @@
+﻿@model HotelShare.Web.ViewModels.Comment.CreateCommentViewModel
+
+@{
+    ViewData["Title"] = "Quote";
+}
+
+<h1>@Resources.Quote</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4 quote-wrapper">
+        <form asp-action="Quote" asp-controller="Comment" method="post">
+            <div class="form-group">
+                <label>@Resources.Quote</label>
+                <textarea asp-for="Quote" class="form-control"></textarea>
+                <span asp-validation-for="Quote" class="text-danger"></span>
+            </div>
+            <partial name="_CreateComment" model="@Model" />
+        </form>
+    </div>
+</div>

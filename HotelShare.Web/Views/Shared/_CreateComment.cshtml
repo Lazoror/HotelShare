@@ -1,0 +1,27 @@
+﻿@model HotelShare.Web.ViewModels.Comment.CreateCommentViewModel
+
+
+@if (!String.IsNullOrEmpty(User.Identity.Name))
+{
+    <p>@User.Identity.Name</p>
+    <input name="@nameof(Model.Name)" class="form-control" value="@User.Identity.Name" type="hidden" />
+}
+else
+{
+    <div class="form-group">
+        <label>@Resources.Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+}
+<div class="form-group">
+    <label>@Resources.Comment</label>
+    <textarea asp-for="Body" class="form-control"></textarea>
+    <span asp-validation-for="Body" class="text-danger"></span>
+</div>
+
+<input asp-for="HotelId" type="hidden" name="@nameof(Model.HotelId)" />
+<input asp-for="ParentCommentId" type="hidden" name="@nameof(Model.ParentCommentId)" />
+<div class="form-group">
+    <input type="submit" value="@Resources.Create" class="btn btn-dark" id="comment-submit-btn" />
+</div>

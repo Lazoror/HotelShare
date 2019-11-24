@@ -1,0 +1,81 @@
+﻿@model IEnumerable<HotelShare.Web.ViewModels.Payment.OrderDetailViewModel>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="cart-top">
+            <div class="row">
+                <div class="cart-title col-md-2">
+                    <h1>@Resources.Basket</h1>
+                </div>
+                <div class="cart-quantity offset-9">
+                    @Model.Count() items
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="cart-items">
+            @foreach (var order in Model)
+            {
+                <div class="cart-item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="cart-item-image">
+                                <img src="/images/room.png" alt="hotel" class="img-fluid"/>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="cart-item-details">
+                                <div class="cart-item-title">
+                                    @order.RoomName
+                                </div>
+
+                                <div class="cart-item-price">$@Html.DisplayFor(modelItem => order.Price)</div>
+
+                                <div class="cart-quantity-bar">
+                                    <div class="bar-minus">
+                                        <img id="bar-minus" orderId=@order.Id src="images/Remove-Icon.svg" alt="-" />
+                                    </div>
+                                    <div class="bar-quantity">@order.Quantity</div>
+                                    <div class="bar-plus">
+                                        <img id="bar-plus" orderId=@order.Id src="images/Add-Icon.svg" alt="+" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="cart-controls">
+                                <a href="" id="remove-item-btn" value=@order.RoomId name="hotelId">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="cart-details">
+            <div class="details-title">
+                <p>Oder Summary</p>
+            </div>
+            <div class="details-prices">
+                <div class="price-subtotal">
+                    <span>Subtotal</span>
+                    <span>$@Model.Sum(o => o.Price).ToString("0.00")</span>
+                </div>
+                <div class="price-taxes">
+                    <span>Taxes</span>
+                    <span>$1</span>
+                </div>
+            </div>
+            <div class="details-price-total">
+                <span class="total-price-title">Total</span>
+                <span class="total-price">$@Model.Sum(o => o.Price).ToString("0.00")</span>
+            </div>
+        </div>
+    </div>
+</div>

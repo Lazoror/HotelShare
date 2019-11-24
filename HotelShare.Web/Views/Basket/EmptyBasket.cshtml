@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>@Resources.Basket</h3>
+
+@if (User.IsInRole("Manager"))
+{
+    <div>
+        @Html.ActionLink(Resources.ManageOrders, "ManageOrders", "Order", new { }, new { @class = "btn btn-dark" })
+        @Html.ActionLink(Resources.OrderHistory, "History", "Order", new { }, new { @class = "btn btn-dark" })
+    </div>
+}
+
+<h1>@Resources.EmptyBasket</h1>
+@Html.ActionLink(@Resources.BackToList, "Index", "Hotel", new { }, new { })

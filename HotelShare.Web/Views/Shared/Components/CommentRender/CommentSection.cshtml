@@ -1,0 +1,58 @@
+﻿@using HotelShare.Web.ViewModels.Comment
+@using HotelShare.Web.ViewModels.Hotel
+@model HotelShare.Domain.Models.SqlModels.CommentModels.DisplayCommentModel
+
+<div class="comment-group">
+    <div class="comment">
+
+        <div class="comment-photo">
+            <img src="/images/Photo.png" alt="user picture" />
+        </div>
+
+        <div class="comment-main">
+            <div class="comment-name">
+                @Html.DisplayFor(modelItem => Model.Name)
+            </div>
+            <div class="comment-date">
+                <span>19/01/2019</span>
+            </div>
+            <div class="comment-ratings-outline">
+                @await Html.PartialAsync("_GameRating", new HotelViewModel {Id = Model.HotelId})
+            </div>
+            @if (Model.Quote != null)
+            {
+                <div class="comment-quote">
+                    <blockquote>
+                        <p>@Html.DisplayFor(modelItem => Model.Quote)</p>
+                    </blockquote>
+                </div>
+            }
+
+            <div class="comment-body">
+                @Html.DisplayFor(modelItem => Model.Body)
+            </div>
+            <div class="comment-controls">
+                @Html.ActionLink("Like", "", "", new { parentCommentId = Model.CommentId, hotelId = Model.HotelId }, new { })
+                @Html.ActionLink(Resources.Reply, "Reply", "Comment", new { parentCommentId = Model.CommentId, hotelId = Model.HotelId }, new { })
+                <span class="btn-link comment-quote-link">@Resources.Quote</span>
+
+                @if (User.IsInRole("Moderator"))
+                {
+                    @Html.ActionLink(Resources.Ban, "Ban", "Comment", new { commentId = Model.CommentId }, new { })
+                    <button class="trigger-button" deleteUrl='@Url.Action("Delete", "Comment", new {commentId = Model.CommentId})'>@Resources.Delete</button>
+                }
+
+                <div id="comment-quote-form" class="comment-quote-form">
+                    @await Html.PartialAsync("_QuoteComment", new CreateCommentViewModel() { HotelId = Model.HotelId, ParentCommentId = Model.CommentId })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @foreach (var comment in Model.ChildrenComments)
+    {
+        <div class="pl-5">
+            @await Component.InvokeAsync("CommentRender", comment)
+        </div>
+    }
+</div>

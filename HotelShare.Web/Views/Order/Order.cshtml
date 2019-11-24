@@ -1,0 +1,78 @@
+﻿@using HotelShare.Web.Payment
+@model HotelShare.Web.ViewModels.Payment.OrderViewModel
+
+@{
+    ViewData["Title"] = "Order";
+
+    var orderSum = Model.Order.OrderDetails.Sum(a => a.Price);
+}
+
+<h1>@Resources.Order</h1>
+
+<h3>@Resources.Total: @Html.DisplayFor(a => orderSum)$</h3>
+
+<form asp-action="Pay" asp-controller="Order" method="get">
+    <div class="payment-methods">
+        <div class="payment-method">
+            <div class="payment-picture">
+                <img src="/images/bank.svg" alt="Bank" />
+            </div>
+            <p>@Resources.BankPayment</p>
+            <div class="order-group">
+                <input type="submit" name="payType" value="@PaymentType.Bank" class="order-btn btn" />
+            </div>
+        </div>
+        <div class="payment-method">
+            <div class="payment-picture">
+                <img src="/images/ibox.svg" alt="IBox terminal" />
+            </div>
+            <p>@Resources.IBoxPayment</p>
+            <div class="order-group">
+                <input type="submit" name="payType" value="@PaymentType.IBox" class="order-btn btn" />
+            </div>
+        </div>
+        <div class="payment-method">
+            <div class="payment-picture">
+                <img src="/images/card.svg" alt="Visa" />
+            </div>
+            <p>@Resources.VisaPayment</p>
+            <div class="order-group">
+                <input type="submit" name="payType" value="@PaymentType.Visa" class="order-btn btn" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Resources.Price
+            </th>
+            <th>
+                @Resources.Quantity
+            </th>
+            <th>
+                @Resources.Discount
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Order.OrderDetails)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discount)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

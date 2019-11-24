@@ -1,0 +1,287 @@
+﻿@using HotelShare.Domain.Models.SqlModels.CommentModels
+@using HotelShare.Web.ViewModels.Comment
+@model HotelShare.Web.ViewModels.Hotel.DisplayGameDetailsByIdRequestModel
+@{
+    ViewData["Title"] = "DetailsByKey";
+
+    if (Model.Comments.Comments == null)
+    {
+        Model.Comments.Comments = new List<DisplayCommentModel>();
+    }
+
+    var count = Model.Comments.Comments.Count;
+    string commentsCount = "";
+    if (count % 2 == 0)
+    {
+        commentsCount = $"{@Model.Comments.Comments.Count} {Resources.CommentsGame}";
+    }
+    else
+    {
+        commentsCount = $"{@Model.Comments.Comments.Count} {Resources.CommentGame}";
+    }
+}
+
+
+
+<div class="row">
+    <div class="col-md-12 hotel-cart-controls-wrapper">
+        @if (User.IsInRole("Manager"))
+        {
+            @if (!Model.HotelViewModel.IsDeleted)
+            {
+                <div class="admin-controls">
+                    @Html.ActionLink(Resources.Edit, "Edit", "Hotel", new { hotelId = Model.Id }, new { @class = "btn btn-outline-primary" })
+                    @Html.ActionLink(Resources.Delete, "Delete", "Hotel", new { hotelId = Model.Id }, new { @class = "btn btn-outline-primary" })
+                    @Html.ActionLink("Add Room", "AddRoom", "Hotel", new { hotelId = Model.Id }, new { @class = "btn btn-outline-primary" })
+                </div>
+            }
+        }
+        <div class="back-link">
+            <img src="~/images/Arrow-left.svg" alt="Arrow left" />
+            <a asp-action="Index">Back to hotels</a>
+        </div>
+    </div>
+
+    <div class="col-md-6 hotel-slider-wrapper">
+        <div class="hotel-slider">
+            <div class="hotel-pic">
+                @if (Model.HotelImages != null && Model.HotelImages.Any())
+                {
+                    foreach (var image in Model.HotelImages)
+                    {
+                        var base64 = Convert.ToBase64String(image);
+                        var imgSrc = $"data:image/gif;base64,{base64}";
+
+                        <img src="@imgSrc"
+                             alt="Hotel picture"
+                             class="img-fluid" />
+                    }
+                }
+                else
+                {
+                    <img src="~/images/hotel.png"
+                         alt="Hotel picture"
+                         class="img-fluid" />
+                }
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6 hotel-details-wrapper">
+        <div class="hotel-details">
+            <div class="hotel-name">
+                <p>@Html.DisplayFor(model => model.HotelViewModel.Name)</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="hotel-price">
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="hotel-ratings" id="hotel-ratings">
+                        <div class="hotel-stars-outline" id="hotel-stars-outline">
+                            @await Html.PartialAsync("_GameRating", Model.HotelViewModel)
+                        </div>
+
+                        <div class="hotel-comments">@commentsCount</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hotel-specific">
+            <div class="hotel-info">
+                <div class="hotel-room">
+                    @*@if (!String.IsNullOrEmpty(Model.GameViewModel.Room))
+                        {
+                            <p>@Html.ActionLink($"{Model.GameViewModel.Room}", "RoomDetails", "Room", new { companyName = Model.GameViewModel.Room }, new { })</p>
+                        }
+                        else
+                        {
+                            <p>@Resources.Unknown</p>
+                        }*@
+
+                </div>
+
+            </div>
+
+            <div class="hotel-platforms">
+                <div class="platform-title">
+                    <p>Location</p>
+                </div>
+                <p>@Model.HotelViewModel.Location</p>
+            </div>
+            <div class="hotel-size">
+                <div class="size-title">
+                    <p>Hotel size</p>
+                </div>
+                <div class="size-info">
+                    <p>100 Rooms</p>
+                </div>
+            </div>
+            <div class="hotel-genres">
+                <div class="genre-title">
+                    <p>Country</p>
+                </div>
+                <p>@Model.HotelViewModel.Country</p>
+            </div>
+        </div>
+
+        <div class="hotel-description">
+            <div class="hotel-get-info">
+                <div class="hotel-get-info-title">
+                    <h1>@Resources.WhatYouGet</h1>
+                </div>
+                <p>@Model.HotelViewModel.Description</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    @foreach (var room in Model.HotelViewModel.Rooms)
+    {
+        <div class="hotel-room-item">
+            
+                <div class="room-image col-md-3">
+                    <img src="/images/room.png" alt="Alternate Text" />
+                </div>
+                <div class="room-info col-md-9">
+                    <div class="room-name">
+                        <label><b>Room name:</b></label>
+                        <span>@room.RoomName</span>
+                    </div>
+                    <div class="room-description">
+                        <label><b>Description:</b></label>
+                        <span>@room.Description</span>
+                    </div>
+                    <div class="room-available">
+                        <label><b>Available:</b></label>
+                        <span>@room.IsAvailable</span>
+                    </div>
+                    <div class="room-available">
+                        <label><b>Price:</b></label>
+                        <span>@room.Price</span>
+                    </div>
+                    <div class="room-book">
+                        @Html.ActionLink("Order room", "AddToBasket", "Basket", new { roomId = room.Id}, new {@class = "btn"})
+                    </div>
+                </div>
+                
+            
+        </div>
+        
+    }
+
+
+<div class="row">
+    <div class="col-md-12 hotel-comments-wrapper">
+        <div class="hotel-comments">
+            <h1>@commentsCount</h1>
+
+            <div class="comment-ratings">
+                @await Html.PartialAsync("_GameRating", Model.HotelViewModel)
+                <div class="comment-rating">@Model.HotelViewModel.Rating</div>
+            </div>
+            <div id="comments-wrapper">
+                <div id="comments-outline">
+                    @await Html.PartialAsync("_GameComments", new DisplayCommentViewModel { Comments = Model.Comments.Comments, HotelId = Model.Id })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var GameComments = document.getElementById("comments-wrapper");
+
+    GameComments.addEventListener("click", async function(e) {
+
+        if (e.target.id == "comment-submit-btn") {
+            e.preventDefault();
+
+            var quoteForm = e.target.parentElement.parentElement;
+            let formCreatingData = new FormData(quoteForm);
+
+            await fetch('@Url.Action("Quote", "Comment")',
+                    {
+                        method: 'POST',
+                        body: new URLSearchParams(formCreatingData)
+
+                    })
+                .then(async function (response) {
+                    let commentsHolder = document.getElementById("comments-outline");
+                    console.log(commentsHolder);
+                    commentsHolder.innerHTML = await response.text();
+                });
+        }
+    });
+</script>
+
+<script>
+    var commentCreatingForm = document.getElementById("add-comment-form");
+    console.log(commentCreatingForm);
+
+    commentCreatingForm.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        let formCreatingData = new FormData(commentCreatingForm);
+
+        await fetch('@Url.Action("Add", "Comment")',
+                {
+                    method: 'POST',
+                    body: new URLSearchParams(formCreatingData)
+                })
+            .then(async function (response) {
+                let commentsHolder = document.getElementById("comments");
+                commentsHolder.innerHTML = await response.text();
+            });
+
+        var commentBody = document.getElementById("comment-area");
+        commentBody.value = "";
+    });
+</script>
+
+<script>
+    var commentQuote = document.querySelectorAll(".comment-quote-link");
+
+    commentQuote.forEach(function (element) {
+        var clickCount = 0;
+
+        element.addEventListener("click", function (e) {
+            clickCount++;
+
+            if (clickCount % 2 == 0) {
+                e.target.parentElement.children[3].style.display = 'none';
+            } else {
+                e.target.parentElement.children[3].style.display = 'block';
+            }
+        });
+    });
+</script>
+
+<script>
+        var hotelRationgOutline = document.getElementById("hotel-ratings");
+
+        hotelRationgOutline.addEventListener("click", async function(e) {
+            e.preventDefault();
+
+            if (e.target.id == "hotel-star") {
+                let starValue = e.target.getAttribute("value");
+                let hotelId = e.target.getAttribute("hotelId");
+
+                await fetch('@Url.Action("ChangeRating", "Hotel")',
+                    {
+                        method: "POST",
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ Rating: starValue, Key:  hotelId})
+                    })
+                    .then(async function (response) {
+                        let commentsHolder = document.getElementById("hotel-stars-outline");
+                        commentsHolder.innerHTML = await response.text();
+                    });
+            }
+
+        });
+    </script>

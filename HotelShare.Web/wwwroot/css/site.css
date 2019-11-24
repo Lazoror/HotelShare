@@ -1,0 +1,1071 @@
+﻿body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #3e4554;
+}
+
+a {
+  color: #0077CC;
+}
+
+a:hover {
+  color: #0077CC;
+}
+
+.form-control,
+select {
+  border: 1px solid #7f7f7f;
+  border-radius: 0;
+  color: #3e4554;
+}
+
+.p0 {
+    padding: 0;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #3e4554;
+  margin-bottom: 16px;
+}
+
+.btn {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 45px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    background-color: #0077CC;
+    border: 1px solid #0077CC;
+    border-radius: 0;
+    outline: none;
+    padding: 12px 35px;
+    font-size: 16px;
+}
+
+.btn:hover {
+  border: 1px solid #0077CC;
+  color: #0077CC;
+  background-color: transparent;
+  transition: 0.5s all;
+}
+
+
+.create-hotel a{
+    margin-bottom: 15px;
+}
+
+.btn:not(:hover) {
+    transition: 0.5s all;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+  width: 100%;
+}
+
+.img-hotel {
+  -webkit-box-shadow: 0px 0px 8px -4px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 0px 0px 8px -4px rgba(0, 0, 0, 0.51);
+  box-shadow: 0px 0px 8px -4px rgba(0, 0, 0, 0.51);
+}
+
+/* QR code generator */
+#qrCode {
+  margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+table {
+  border-radius: 4px;
+}
+
+dd {
+  font-size: 18px;
+}
+
+.select-genres select {
+  display: block;
+  min-width: 200px;
+  min-height: 200px;
+  padding: 5px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.select-language {
+    text-align: right;
+    padding: 0 25px 0 0;
+}
+
+.btn {
+  margin-top: 8px;
+}
+
+.header-wrapper {
+  padding: 40px 70px;
+  position: relative;
+  background-image: url(../images/header.jpg);
+  background-size: cover;
+  height: 655px;
+}
+
+.header-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.navbar {
+  z-index: 1;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.header-inner {
+  position: relative;
+  bottom: 5%;
+  z-index: 1;
+  margin-top: 270px;
+}
+
+.header-title-question,
+.header-title-answer {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.header-title-question {
+  font-size: 46px;
+  line-height: 57px;
+}
+
+.header-title-answer {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.header-inner p {
+  color: #fff;
+}
+
+.nav-item a,
+.nav-item span,
+.logout-btn {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-buy {
+  display: inline-block;
+  border-radius: 2px;
+  padding: 6px;
+  margin: 6px 6px 6px 0px;
+  background-color: #212529;
+}
+
+.btn-link {
+    color: #0077CC;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.btn-link:hover {
+    color: #0077CC;
+    text-decoration: none;
+}
+
+.btn-buy input[type="submit"] {
+  background: linear-gradient(
+    to bottom,
+    rgba(121, 153, 5, 1) 5%,
+    rgba(83, 105, 4, 1) 95%
+  );
+  color: #d2e885;
+  border: none;
+  padding: 3px 12px;
+  font-size: 19px;
+}
+
+.btn-buy input[type="number"] {
+  background: linear-gradient(
+    to bottom,
+    rgba(121, 153, 5, 1) 5%,
+    rgba(83, 105, 4, 1) 95%
+  );
+  color: #fff;
+  border: none;
+  padding: 3px;
+  text-align: center;
+  font-size: 19px;
+}
+
+.btn-buy span {
+  color: #ffe;
+}
+
+.order-btn {
+  color: #ffe;
+  padding: 10px 50px;
+}
+
+.order-btn:hover {
+  color: #ffe;
+}
+
+.back-link a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.back-link {
+  padding-bottom: 20px;
+}
+
+.hotel-star {
+    background-image: url(../images/Star_empty.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+    .hotel-star:hover {
+        background-image: url(../images/Star.svg);
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+.hotel-list-cart {
+    display: flex;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    color: #3e4554;
+    margin-bottom: 20px;
+    padding: 25px 10px;
+    position: relative;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.hotel-img {
+  height: 100%;
+  width: 100%;
+}
+
+.hotel-list-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 16px;
+}
+
+.hotel-list-name a {
+  line-height: 22px;
+}
+
+.payment-method {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 10px;
+}
+
+.hotel-list-Rating {
+    float: right;
+}
+
+.payment-method:last-child {
+    border-bottom: none;
+}
+
+.comment {
+    position: relative;
+    display: flex;
+  padding: 25px;
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #7b7b7b;
+}
+
+.comment-name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  line-height: 14px;
+}
+
+.comment-body {
+  line-height: 24px;
+  color: #3e4554;
+}
+
+.comment-quote,
+.comment-body {
+  margin-top: 15px;
+}
+
+.comment-quote-form {
+    display: none;
+}
+
+.comment-ratings-outline {
+    position: absolute;
+    right: 0;
+    top: 30px;
+}
+
+.comment-main {
+    display: block;
+    width: 100%;
+}
+
+.comment-ratings {
+    padding-bottom: 34px;
+    display: flex;
+}
+
+.comment-rating {
+  padding-left: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0077CC;
+}
+
+.comment-main {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.comment-controls {
+  margin-top: 10px;
+}
+
+.comment-controls a {
+  color: #0077CC;
+  text-decoration: underline;
+  padding-right: 15px;
+}
+
+.comment-controls a:hover {
+  text-decoration: none;
+}
+
+.comment-reply {
+  padding: 10px 0px 0px 25px;
+}
+
+.comment-group {
+  background-color: #f7f7f7;
+}
+
+blockquote {
+  border-left: 2px solid orange;
+  margin-top: 10px;
+}
+
+blockquote p {
+  padding-left: 10px;
+}
+
+.sidebar {
+  padding: 25px;
+}
+
+.sidebar-price-range input {
+  max-width: 98%;
+}
+
+.sidebar-genre,
+.room {
+  display: flex;
+  font-size: 16px;
+}
+
+.sidebar input[type="checkbox"]:checked {
+  background: #0077CC url(../images/sharp_check_white_48dp.png) no-repeat;
+  background-size: 20px 20px;
+  background-position: 50% 50%;
+  outline: 1px solid #0077CC;
+}
+
+.sidebar input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: 1px solid #7f7f7f;
+  margin-right: 15px;
+}
+
+.price-range-left,
+.price-range-right {
+  display: inline-block;
+  width: 49%;
+}
+
+.sidebar hr {
+  background-color: #9a9a9a;
+}
+
+.tingle-demo {
+  display: none;
+}
+
+.delete-link-modal {
+  font-size: 24px;
+  color: #0077CC;
+}
+
+.trigger-button {
+  color: #0077CC;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.trigger-button:hover {
+  text-decoration: none;
+}
+
+.publish-btn {
+  background-color: rgb(123, 10, 10) !important;
+  border: none;
+}
+
+.search-form {
+  float: right;
+  display: inline-block;
+}
+
+.pagination-page {
+  margin: 0 auto;
+}
+
+.pagination-items {
+  margin-top: 45px;
+}
+
+.pagging {
+  position: absolute;
+  right: 150%;
+  display: flex;
+  bottom: -45px;
+}
+
+.pagging input.active {
+  font-family: "Montserrat", sans-serif;
+  border-bottom: 2px solid #003580;
+}
+
+.pagging input {
+  font-family: "Montserrat", sans-serif;
+  margin-right: 5px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #003580;
+}
+
+.logout-btn {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+}
+
+.logout-form {
+  margin: 0;
+}
+
+.title-hotel p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #3e4554;
+}
+
+.hotel-get-info-title {
+  padding-top: 25px;
+}
+
+.hotel-search {
+  width: 245px;
+  height: 40px;
+  color: #9a9a9a;
+  font-size: 14px;
+  border: 1px solid #7f7f7f;
+  border-radius: 0;
+}
+
+.sidebar-title p {
+  font-family: "Montserrat", sans-serif;
+  color: #3e4554;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.sort-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #003580;
+  margin-top: 40px;
+}
+
+.sidebar hr {
+  color: #9a9a9a;
+}
+
+.description-detail {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.description-list {
+  list-style: none;
+  padding-left: 31px;
+  margin-top: 15px;
+}
+
+.description-list li {
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.description-list li::before {
+  content: "\2022";
+  font-size: 32px;
+  width: 28px;
+  color: #0077CC;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: -1em;
+  opacity: 0.66;
+  vertical-align: middle;
+}
+
+.news-img {
+  position: relative;
+  height: 333px;
+  width: 350px;
+  background-image: url(../images/Sharing.jpeg);
+  background-size: cover;
+}
+
+.hotel-room-item {
+    margin: 10px;
+    display: flex;
+    padding: 10px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+
+.room-image {
+    
+}
+
+.news-img p {
+    position: absolute;
+    bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #fff;
+    margin-left: 30px;
+}
+
+.news-img p::after {
+  content: url(../images/Arrow.svg);
+  height: 19px;
+  width: 12px;
+  padding-left: 5px;
+}
+
+.footer-wrapper {
+    background-color: #001B42;
+    margin-top: 80px;
+    color: #fff;
+    padding-top: 60px;
+}
+
+.footer-title p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.footer-list {
+  padding: 0;
+}
+
+.footer-list li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.footer-media img {
+  padding: 0 10px 0 0;
+}
+
+footer a {
+    color: #fff;
+}
+
+.copy {
+  margin-top: 40px;
+}
+
+.contacts {
+  margin-top: 80px;
+}
+
+.home-item {
+  background-color: #f7f7f7;
+  padding: 25px 20px;
+  height: 470px;
+}
+
+.contact-form-inner input {
+  position: relative;
+  height: 40px;
+}
+
+.contact-submit {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.contact-submit input {
+  height: 45px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-color: #0077CC;
+  border-radius: 0;
+  border: 0;
+  padding: 12px 35px;
+  font-size: 16px;
+}
+
+.contact-form-inner input[id="form-contact"],
+.contact-form-inner textarea {
+  display: block;
+  width: 100%;
+}
+
+.contact-form-inner label {
+  margin-top: 15px;
+}
+
+.twitter-link,
+.blog-link {
+  text-align: right;
+}
+
+.item-title p,
+.item-title p {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.item-time p {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+.item-body {
+  margin-bottom: 10px;
+}
+
+.contacts a {
+  text-decoration: underline;
+}
+
+.twitter-item,
+.blog-item {
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 15px;
+}
+
+.twitter-body .twitter-item:last-child,
+.blog-body .blog-item:last-child {
+  border: none;
+}
+
+.blog-item p {
+  margin-bottom: 25px;
+}
+
+.slider-size {
+    width: 100%;
+    height: 445px;
+}
+
+.hotel-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 34px;
+}
+
+.hotel-price {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.hotel-stars {
+    display: flex;
+    margin-right: 12px;
+}
+
+.hotel-ratings {
+  display: flex;
+}
+
+.hotel-details {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.hotel-specific {
+  padding-bottom: 35px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.hotel-info {
+  padding: 30px 0 0 0;
+}
+
+.hotel-room p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.hotel-type,
+.hotel-released {
+  display: inline-block;
+}
+
+.vertical-divider {
+  display: inline-block;
+  color: #d8d8d8;
+  font-size: 18px;
+}
+
+.size-title p,
+.platform-title p,
+.genre-title p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.hotel-platforms {
+  margin-right: 55px;
+}
+
+.hotel-size,
+.hotel-platforms {
+  display: inline-block;
+}
+
+.hotel-genre {
+    display: inline-block;
+    padding: 3px 20px;
+    border: 1px solid #0077CC;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.hotel-genres {
+  margin-bottom: 25px;
+}
+
+.cart-item-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.cart-item-hotelsize {
+  color: #727272;
+}
+
+.cart-item-price {
+  font-size: 18px;
+  color: #404040;
+  margin-top: 10px;
+}
+
+.cart-item-image {
+  -webkit-box-shadow: 0px 0px 8px -4px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 0px 0px 8px -4px rgba(0, 0, 0, 0.51);
+  box-shadow: 0px 0px 8px -4px rgba(0, 0, 0, 0.51);
+}
+
+.cart-controls {
+  text-align: right;
+}
+
+.bar-minus,
+.bar-plus {
+  display: flex;
+  border: 1px solid #d8d8d8;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-minus {
+  width: 30px;
+}
+
+    .bar-plus img {
+        padding: 7px 8px;
+        cursor: pointer;
+    }
+
+.bar-minus img {
+    padding: 12px 8px;
+    cursor: pointer;
+}
+
+.bar-plus {
+  width: 30px;
+}
+
+.cart-quantity-bar {
+  display: flex;
+  margin-top: 10px;
+}
+
+.bar-quantity {
+  font-size: 18px;
+  padding: 0 15px;
+}
+
+.cart-item {
+  border-bottom: 1px solid #d8d8d8;
+  padding: 25px 0;
+}
+
+.cart-item:first-child {
+  border-top: 1px solid #d8d8d8;
+}
+
+.cart-item:last-child {
+  border: none;
+}
+
+.cart-title,
+.cart-quantity {
+  display: inline-block;
+}
+
+.cart-quantity {
+  text-align: right;
+  font-size: 16px;
+}
+
+.cart-details {
+  padding: 25px;
+  background-color: #f7f7f7;
+}
+
+.details-prices {
+  padding: 15px 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.details-title {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.details-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 0;
+}
+
+.price-subtotal,
+.price-taxes,
+.details-price-total {
+  padding: 6px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.details-price-total {
+  padding: 25px 0 10px 0;
+}
+
+.total-price-title,
+.total-price {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.total-price {
+  color: #0077CC;
+}
+
+.details-checkout-btn a {
+  display: block;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-wrapper {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.slide {
+    float: left;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: opacity 500ms linear;
+}
+
+.slider-wrapper > .slide:first-child {
+    opacity: 1;
+}
+
+.slider-nav {
+    height: 64px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -52px;
+    z-index: 1000;
+}
+
+    .slider-nav button {
+        border: none;
+        display: block;
+        width: 16px;
+        height: 64px;
+        cursor: pointer;
+        text-indent: -9999em;
+        background-color: transparent;
+        background-repeat: no-repeat;
+    }
+
+        .slider-nav button:focus {
+            outline-style: none;
+        }
+
+        .slider-nav button.slider-previous {
+            float: left;
+            background-image: url('../images/slider-left-arrow.svg');
+            display: none;
+            margin-left: 1em;
+        }
+
+        .slider-nav button.slider-next {
+            float: right;
+            background-image: url('../images/slider-right-arrow.svg');
+            margin-right: 1em;
+        }
+
+.slider-pagination {
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+    .slider-pagination a {
+        width: 2em;
+        height: 2em;
+        line-height: 2;
+        text-align: center;
+        border: 1px solid #ddd;
+        color: #000;
+        text-decoration: none;
+        background: #f5f5f5;
+        background: linear-gradient( #f5f5f5, #fff );
+        display: inline-block;
+        margin-right: 0.7em;
+    }
+
+        .slider-pagination a.current {
+            border-color: #000;
+            background: #fff;
+            background: linear-gradient( #fff, #f5f5f5 );
+        }
+
+
+        

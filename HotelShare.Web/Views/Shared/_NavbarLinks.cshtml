@@ -1,0 +1,24 @@
+﻿<ul class="navbar-nav">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li class="nav-item">
+            <span class="nav-link">@Resources.Hello, @User.Identity.Name</span>
+        </li>
+        <li class="nav-item active">
+            <form asp-action="Logout" asp-controller="Account" method="post" class="logout-form">
+                <input class="nav-link logout-btn text-white" type="submit" value="@Resources.SignOut" />
+            </form>
+        </li>
+
+    }
+    else
+    {
+        <li class="nav-item active">
+            @Html.ActionLink(Resources.SignIn, "Login", "Account", new { }, new { @class = "nav-link" })
+        </li>
+        <li class="nav-item active">
+            @Html.ActionLink(Resources.SignUp, "Register", "Account", new { }, new { @class = "nav-link" })
+        </li>
+    }
+</ul>
+

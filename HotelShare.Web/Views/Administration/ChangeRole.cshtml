@@ -1,0 +1,21 @@
+﻿@model HotelShare.Web.ViewModels.Account.ChangeRoleUserViewModel
+
+@{
+    ViewData["Title"] = "ChangeRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Select Roles</h1>
+
+<form asp-action="ChangeRole" asp-controller="Administration" method="post">
+    <select name="@nameof(Model.Roles)" class="form-control" multiple="multiple">
+        @foreach (string role in Model.Roles)
+        {
+            <option value="@role">@role</option>
+        }
+    </select>
+    <input type="hidden" name="@nameof(Model.UserEmail)" value="@Model.UserEmail" />
+    <input type="submit" name="submit" value="Change Role" class="btn btn-dark"/>
+</form>
+
+

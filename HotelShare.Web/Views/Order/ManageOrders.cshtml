@@ -1,0 +1,61 @@
+﻿@using HotelShare.Domain.Enums
+@model IEnumerable<HotelShare.Domain.Models.SqlModels.OrderModels.Order>
+
+@{
+    ViewData["Title"] = "ManageOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Manage Orders</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipper)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Shipper)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @if (item.OrderStatus != OrderStatus.Shipped)
+                    {
+                        @Html.ActionLink("Shipped", "SetShippedStatus", "Order", new { userId = item.CustomerId }, new { })
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

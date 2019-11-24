@@ -1,0 +1,37 @@
+﻿@model HotelShare.Web.ViewModels.Account.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Resources.Register</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4 register-wrapper">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Resources.Email
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Resources.Password
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Resources.ConfirmPassword
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@Resources.Create" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+

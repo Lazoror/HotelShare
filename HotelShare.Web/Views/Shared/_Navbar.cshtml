@@ -1,0 +1,44 @@
+﻿@{
+
+
+}
+<div class="header-outter">
+    
+        <div class="container-fluid p0">
+            
+                <div class="header-wrapper">
+
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="/">Hotel Share</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto nav-main-section">
+                                <li class="nav-item active">
+                                    @Html.ActionLink(Resources.Hotels, "Index", "Hotel", new {}, new {@class = "nav-link"})
+                                </li>
+                                <li class="nav-item active">
+                                    @Html.ActionLink(Resources.Basket, "Index", "Basket", new {}, new {@class = "nav-link"})
+                                </li>
+                            </ul>
+                        </div>
+
+                        <partial name="_NavbarLinks"/>
+
+                    </nav>
+                    <div class="col-md-6 header-inner-wrapper">
+                        <div class="header-inner">
+                            <p class="header-title-question">@Resources.WhatCanMakeYourLifeEasier</p>
+                            <p class="header-title-answer">@Resources.EmpoweredSolutionswithSimpleProcess</p>
+                        </div>
+                    </div>
+                </div>
+            
+            
+        
+    </div>
+   
+
+</div>

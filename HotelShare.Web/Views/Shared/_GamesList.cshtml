@@ -1,0 +1,37 @@
+﻿@model HotelShare.Domain.Models.SqlModels.FilterModels.HotelFilters
+
+<div class="row">
+    @foreach (var item in Model.Hotels)
+    {
+        <div class="col-md-12 col-sm-12 col-12">
+            <div class="hotel-list-cart">
+                <div class="hotel-img col-md-3">
+                    <a href="@Url.Action("GetDetailsByKey", "Hotel", new {hotelId = item.Id})">
+                        <img src="/images/hotel.png" alt="Hotel picture" class="img-fluid img-hotel" />
+                    </a>
+                </div>
+                
+                <div class="hotel-list-desc col-md-9">
+                    <div class="hotel-list-Rating">
+                        <span>Rating: @item.Rating</span>
+                    </div>
+                    <div class="hotel-list-name">
+                        <h3> @Html.ActionLink(item.Name, "GetDetailsByKey", "Hotel", new { hotelId = item.Id })</h3>
+
+                    </div>
+                    <div class="hotel-listlocation">
+                        <p>@item.Country - @item.City - @item.Location</p>
+                    </div>
+                    <div class="hotel-list-available">
+                        <span>Available rooms: @item.AvailableRooms</span>
+                    </div>
+                    <div class="hotel-list-name float-right">
+                        <h3> @Html.ActionLink("Book a room", "GetDetailsByKey", "Hotel", new { hotelId = item.Id }, new {@class = "btn"})</h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EntityConfigurations\Comment\**" />
+    <Compile Remove="EntityConfigurations\Genre\**" />
+    <Compile Remove="EntityConfigurations\Platform\**" />
+    <Compile Remove="EntityConfigurations\Room\**" />
+    <EmbeddedResource Remove="EntityConfigurations\Comment\**" />
+    <EmbeddedResource Remove="EntityConfigurations\Genre\**" />
+    <EmbeddedResource Remove="EntityConfigurations\Platform\**" />
+    <EmbeddedResource Remove="EntityConfigurations\Room\**" />
+    <None Remove="EntityConfigurations\Comment\**" />
+    <None Remove="EntityConfigurations\Genre\**" />
+    <None Remove="EntityConfigurations\Platform\**" />
+    <None Remove="EntityConfigurations\Room\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.3" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HotelShare.Domain\HotelShare.Domain.csproj" />
+    <ProjectReference Include="..\HotelShare.Interfaces\HotelShare.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

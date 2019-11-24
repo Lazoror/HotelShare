@@ -1,0 +1,275 @@
+﻿@model HotelShare.Domain.Models.SqlModels.FilterModels.HotelFilters
+@using HotelShare.Domain.Enums
+@using Newtonsoft.Json
+
+@{
+    int releaseDate = (int)Model.Filters.ReleaseDate;
+    int sortType = (int)Model.Filters.SortType;
+
+    var itemsPerPage = new List<string>
+{
+        "10",
+        "20",
+        "50",
+        "100",
+        "all"
+    };
+
+    var action = ViewContext.RouteData.Values["Action"].ToString();
+}
+
+<div id="page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="title-hotel">
+                    <p>@Resources.Hotels</p>
+                </div>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <span class="create-hotel"><a asp-action="Add" asp-controller="Hotel" class="btn">Create new hotel</a></span>
+
+                }
+                <div class="search-form">
+                    <form asp-controller="Hotel" asp-action="Index" method="get">
+                        <input type="text" name="@nameof(Model.Filters.SearchString)" placeholder="Find Hotel" pattern=".{3,}" required title="3 characters minimum" class="form-control hotel-search" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8">
+
+                @if (User.IsInRole("Administrator"))
+                {
+                    <div>
+                        @Html.ActionLink(Resources.ManageUsers, "ManageUsers", "Administration", new { }, new { @class = "btn btn-dark" })
+                        @Html.ActionLink(Resources.ManageRoles, "ManageRoles", "Administration", new { }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+
+                <div id="hotel-outlinee">
+                    @await Html.PartialAsync("_GamesList", Model)
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <form asp-action="Index" asp-controller="Hotel" method="get" id="filterForm">
+                    <div class="sidebar-title">
+                        <p>Refine Results</p>
+                    </div>
+                    <div class="sidebar">
+                        <div class="sidebar-sorting">
+                            <p class="sort-title">@Resources.Sorting</p>
+                            <hr />
+                            <select name="@nameof(Model.Filters.SortType)" asp-items="Html.GetEnumSelectList<SortType>()" id="sort-type" class="form-control"></select>
+                        </div>
+
+                        <div class="sidebar-price-range">
+                            <p class="sort-title">@Resources.PriceRange</p>
+                            <hr />
+
+                            <div class="price-range-left">
+                                <p>@Resources.From</p>
+                                <input type="number" name="@nameof(Model.Filters.PriceFrom)" value="@Model.Filters.PriceFrom" min="0" step="0.01" id="priceFrom" class="form-control" />
+                            </div>
+                            <div class="price-range-right">
+                                <p>@Resources.To</p>
+                                <input type="number" name="@nameof(Model.Filters.PriceTo)" value="@Model.Filters.PriceTo" step="0.01" id="priceTo" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="sidebar-release-date">
+                            <p class="sort-title">@Resources.ReleaseDate</p>
+                            <hr />
+
+                            <select name="@nameof(Model.Filters.ReleaseDate)" asp-items="Html.GetEnumSelectList<ReleaseDate>()" id="release-date" class="form-control"></select>
+                        </div>
+
+
+                        @if (!String.IsNullOrEmpty(Model.Filters.SearchString))
+                        {
+                            <input type="hidden" name="@nameof(Model.Filters.SearchString)" value="@Model.Filters.SearchString" />
+                        }
+
+                        <input type="hidden" name="@nameof(Model.Filters.CurrentPage)" value="" id="currentPage" />
+                        <input type="hidden" name="@nameof(Model.Filters.ItemsPerPage)" value="@Model.Filters.ItemsPerPage" id="items-per-page" />
+
+                        <input type="button" name="sumbit" value="@Resources.Filter" class="btn" id="filter-btn" />
+                    </div>
+                    <div class="pagging">
+                        @for (int i = 1; i <= Model.Filters.TotalPages; i++)
+                        {
+                            if (i != Model.Filters.CurrentPage)
+                            {
+                                <input type="button" value="@i" name="@nameof(Model.Filters.CurrentPage)" class="" id="pagging-btn" />
+                            }
+                            else
+                            {
+                                <input type="button" value="@i" name="@nameof(Model.Filters.CurrentPage)" class="active" id="pagging-btn" />
+                            }
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+
+            <div class="pagination-items">
+                <span>@Resources.ItemsPerPage</span>
+                <form asp-controller="Hotel" asp-action="Index" method="get" id="pagination-items">
+                    <select name="@nameof(Model.Filters.ItemsPerPage)" class="form-control d-inline-block w-auto">
+
+                        @foreach (string item in itemsPerPage)
+                        {
+                            if (item == Model.Filters.ItemsPerPage.ToString())
+                            {
+                                if (item == "all")
+                                {
+                                    <option value="@int.MaxValue" selected>@item</option>
+                                }
+                                else
+                                {
+                                    <option value="@item" selected>@item</option>
+                                }
+
+                            }
+                            else
+                            {
+                                if (item == "all")
+                                {
+                                    <option value="@int.MaxValue">@item</option>
+                                }
+                                else
+                                {
+                                    <option value="@item">@item</option>
+                                }
+                            }
+                        }
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+        document.getElementById('release-date').value = @releaseDate;
+        document.getElementById('sort-type').value = @sortType;
+        //var paggingBtn = document.querySelectorAll("#pagging-btn");
+        var paggingForm = document.getElementById('pagination-items');
+        var filterFormInputs = document.querySelectorAll("#filterForm input:not(.btn)");
+        var filterFormSelects = document.querySelectorAll("#filterForm select");
+        var filterBtn = document.getElementById('filter-btn');
+        var filterForm = document.getElementById('filterForm');
+        var isChanged = false;
+
+        //paggingBtn.forEach(function(elem) {
+        //    elem.addEventListener("click", function () {
+        //        document.getElementById("currentPage").setAttribute("value", this.value);
+        //            filterForm.submit();
+        //        });
+        //});
+
+        paggingForm.addEventListener("change", function() {
+            this.submit();
+        });
+
+        filterBtn.addEventListener("click", function () {
+
+            var s = str.split('&quot;').join('"');
+            var oldFilters = JSON.parse(s);
+
+            var stra = '@(JsonConvert.SerializeObject(@Model.Filters))';
+            var s1 = stra.split('&quot;').join('"');
+            var currentFilters = JSON.parse(s1);
+
+            var genres = document.querySelectorAll(".sidebar-genres input");
+            var genresArr = [];
+            for (var i = 0; i < genres.length; i++) {
+                if (genres[i].checked == true) {
+                    genresArr.push(genres[i].value);
+                }
+            }
+
+            if (genresArr.length == 0) {
+                genresArr = null;
+            }
+
+            currentFilters.Genres = genresArr;
+
+            var platforms = document.querySelectorAll(".sidebar-platforms input");
+            var platformsArr = [];
+            for (var i = 0; i < platforms.length; i++) {
+                if (platforms[i].checked == true) {
+                    platformsArr.push(platforms[i].value);
+                }
+            }
+
+            if (platformsArr.length == 0) {
+                platformsArr = null;
+            }
+
+            currentFilters.Platforms = platformsArr;
+
+            var rooms = document.querySelectorAll(".sidebar-room input");
+            var roomsArr = [];
+            for (var i = 0; i < rooms.length; i++) {
+                if (rooms[i].checked == true) {
+                    roomsArr.push(rooms[i].value);
+                }
+            }
+
+            if (roomsArr.length == 0) {
+                roomsArr = null;
+            }
+
+            currentFilters.Rooms = roomsArr;
+            currentFilters.ReleaseDate = Number(document.querySelector("#release-date").value);
+            currentFilters.SortType = Number(document.querySelector("#sort-type").value);
+            currentFilters.PriceFrom = Number(document.querySelector("#priceFrom").value);
+            currentFilters.PriceTo = Number(document.querySelector("#priceTo").value);
+
+            if (oldFilters.SortType != currentFilters.SortType) {
+                isChanged = true;
+            }
+            if (oldFilters.PriceFrom != currentFilters.PriceFrom) {
+                isChanged = true;
+            }
+            if (oldFilters.PriceTo != currentFilters.PriceTo) {
+                isChanged = true;
+            }
+            if (oldFilters.Rooms != currentFilters.Rooms) {
+                isChanged = true;
+            }
+            if (oldFilters.ReleaseDate != currentFilters.ReleaseDate) {
+                isChanged = true;
+            }
+            if (oldFilters.Genres != currentFilters.Genres) {
+                isChanged = true;
+            }
+            if (oldFilters.Platforms != currentFilters.Platforms) {
+                isChanged = true;
+            }
+
+            if (isChanged == true) {
+                document.getElementById("currentPage").setAttribute("value", 1);
+                filterBtn.setAttribute("type", "submit");
+                filterBtn.submit();
+            }
+        });
+        isChanged = false;
+        filterBtn.setAttribute("type", "button");
+
+</script>

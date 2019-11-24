@@ -1,0 +1,45 @@
+﻿<footer>
+    <div class="footer-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-links-wrapper">
+                    <div class="footer-title">
+                        <p>@Resources.SiteLinks</p>
+                        <ul class="header-link-list footer-list">
+                            <li><a asp-controller="Hotel" asp-action="Index">@Resources.Hotels</a></li>
+                            <li><a asp-controller="Basket" asp-action="Index">@Resources.Basket</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-about-wrapper">
+                    <div class="footer-title">
+                        <p>@Resources.CompanyInformation</p>
+                        <ul class="faq-links footer-list">
+                            <li><a href="#">@Resources.About</a></li>
+                            <li><a href="#">@Resources.Awards</a></li>
+                            <li><a href="#">@Resources.Reviews</a></li>
+                            <li><a href="#">@Resources.Testimonials</a></li>
+                            <li><a href="#">@Resources.Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-social-wrapper">
+                    <div class="footer-title">
+                        <p>@Resources.SocialMedia</p>
+                    </div>
+                    <div class="footer-media">
+                        <a href="#"><img src="~/images/twitter.svg" alt="Twitter"></a>
+                        <a href="#"><img src="~/images/facebook.svg" alt="Facebok"></a>
+                        <a href="#"><img src="~/images/email.svg" alt="Email"></a>
+                        <a href="#"><img src="~/images/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="~/images/google-plus.svg" alt="Google Plus"></a>
+                    </div>
+                </div>
+                <div class="col-md-12 footer-rights-wrapper">
+                    <p class="copy">&copy; @DateTime.UtcNow.Year All Rights Reserved</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>

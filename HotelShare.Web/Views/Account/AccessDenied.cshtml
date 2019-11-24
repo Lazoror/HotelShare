@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "AccessDenied";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Resources.LoginDenied</h1>
+
+@Html.ActionLink(Resources.Login, "Login", "Account", new { returnUrl = Model }, new {})

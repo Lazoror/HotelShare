@@ -1,0 +1,52 @@
+﻿@model HotelShare.Web.ViewModels.Payment.CardViewModel
+
+@{
+    ViewData["Title"] = "Card";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-5 card-wrapper">
+        <form asp-action="Card" method="post">
+            <div class="form-group">
+                <label class="control-label">Cart holder name</label>
+                <input asp-for="CartHolderName" class="form-control" required />
+                <span asp-validation-for="CartHolderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Card number 16 digits</label>
+                <input asp-for="CardNumber" class="form-control" type="text" required pattern="[0-9]{16,16}" />
+                <span asp-validation-for="CardNumber" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-3 d-inline-block">
+
+                    <label class="control-label">Month</label>
+                    <input asp-for="MonthExpiry" class="form-control" min="1" max="12" required />
+                    <span asp-validation-for="MonthExpiry" class="text-danger"></span>
+
+                </div>
+                <div class="col-md-3 d-inline-block">
+                    <div class="form-group">
+                        <label class="control-label">Year</label>
+                        <input asp-for="YearExpiry" class="form-control" min="@DateTime.Now.Year" required />
+                        <span asp-validation-for="YearExpiry" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-3 d-inline-block">
+                    <div class="form-group">
+                        <label class="control-label">CVV</label>
+                        <input asp-for="SecurityCode" class="form-control" type="text" required pattern="[0-9]{3,3}" />
+                        <span asp-validation-for="SecurityCode" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="link-container">
+                <input type="submit" value="Pay" class="btn btn-dark" />
+            </div>
+
+        </form>
+    </div>
+</div>
+

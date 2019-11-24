@@ -1,0 +1,43 @@
+﻿@model HotelShare.Web.ViewModels.Comment.CommentViewModel
+
+<h4>@Resources.NewComment</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="comment-form-outline">
+            <form asp-action="Add" asp-controller="Comment" method="post" id="add-comment-form">
+
+                @if (!String.IsNullOrEmpty(User.Identity.Name))
+                {
+                    <p>@User.Identity.Name</p>
+                    <input name="@nameof(Model.Name)" class="form-control" value="@User.Identity.Name" type="hidden" />
+                }
+                else
+                {
+                    <div class="form-group">
+                        <label>@Resources.Name</label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                }
+
+                <div class="form-group">
+                    <label>@Resources.Comment</label>
+                    <textarea asp-for="Body" class="form-control" id="comment-area"></textarea>
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+
+                <input type="hidden" name="@nameof(Model.HotelId)" value="@Model.HotelId" />
+
+                <div class="form-group">
+                    <div id="submit-add-comment">
+                        <input type="submit" value="@Resources.Add" class="btn btn-dark" />
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
