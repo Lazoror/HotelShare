@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Информация</value>
+    <value>Інформація</value>
   </data>
   <data name="Add" xml:space="preserve">
-    <value>Добавить</value>
+    <value>Добавити</value>
   </data>
   <data name="AddGenres" xml:space="preserve">
-    <value>Добавить жанры</value>
+    <value>Добавити жанри</value>
   </data>
   <data name="AddPlatforms" xml:space="preserve">
-    <value>Добавить платформы</value>
+    <value>Добавити платформи</value>
   </data>
   <data name="AddToCart" xml:space="preserve">
-    <value>Добавить в корзину</value>
+    <value>Добавити у кошик</value>
   </data>
   <data name="Awards" xml:space="preserve">
-    <value>Награды</value>
+    <value>Нагороди</value>
   </data>
   <data name="BackToList" xml:space="preserve">
-    <value>Вернуться назад</value>
+    <value>Повернутись назад</value>
   </data>
   <data name="Ban" xml:space="preserve">
-    <value>Забанить</value>
+    <value>Забанити</value>
   </data>
   <data name="Bank" xml:space="preserve">
     <value>Банк</value>
@@ -148,184 +148,184 @@
     <value>Оплата через банк</value>
   </data>
   <data name="Basket" xml:space="preserve">
-    <value>Корзина</value>
+    <value>Кошик</value>
   </data>
   <data name="Change" xml:space="preserve">
-    <value>Изменить</value>
+    <value>Змінити</value>
   </data>
   <data name="ChangeRoom" xml:space="preserve">
-    <value>Изменить издателя</value>
+    <value>Змінити кімнату</value>
   </data>
   <data name="Checkout" xml:space="preserve">
-    <value>Оформить</value>
+    <value>Оформити</value>
   </data>
   <data name="Comment" xml:space="preserve">
-    <value>Комментарий</value>
+    <value>Коментарій</value>
   </data>
   <data name="CommentGame" xml:space="preserve">
-    <value>Коментарий</value>
+    <value>Коментарій</value>
   </data>
   <data name="Comments" xml:space="preserve">
-    <value>Комментарии</value>
+    <value>Коментарії</value>
   </data>
   <data name="CommentsGame" xml:space="preserve">
-    <value>Комментариев</value>
+    <value>Коментарія</value>
   </data>
   <data name="CompanyInformation" xml:space="preserve">
-    <value>О компании</value>
+    <value>Про компанію</value>
   </data>
   <data name="CompanyName" xml:space="preserve">
-    <value>Название компании</value>
+    <value>Назва компанії</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
-    <value>Подтверидть пароль</value>
+    <value>Підтвердити пароль</value>
   </data>
   <data name="Contact" xml:space="preserve">
-    <value>Контакты</value>
+    <value>Контакти</value>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>Создать</value>
+    <value>Створити</value>
   </data>
   <data name="CreateGame" xml:space="preserve">
-    <value>Создать новую игру</value>
+    <value>Створити новий готель</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Удалить</value>
+    <value>Видалити</value>
   </data>
   <data name="DeleteGenres" xml:space="preserve">
-    <value>Удалить жанры</value>
+    <value>Видалити жанри</value>
   </data>
   <data name="DeletePlatforms" xml:space="preserve">
-    <value>Удалить платформы</value>
+    <value>Видалити платформи</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Описание</value>
+    <value>Опис</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Детали</value>
+    <value>Деталі</value>
   </data>
   <data name="Discontinued" xml:space="preserve">
-    <value>Больше не издается</value>
+    <value>Більше немає</value>
   </data>
   <data name="Discount" xml:space="preserve">
-    <value>Скидка</value>
+    <value>Знижка</value>
   </data>
   <data name="Download" xml:space="preserve">
     <value>Скачать</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Изменить</value>
+    <value>Змінити</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Почта</value>
   </data>
   <data name="EmpoweredSolutionswithSimpleProcess" xml:space="preserve">
-    <value>Простое решение для повседневных задач</value>
+    <value>Просте рішення для щоденних задач</value>
   </data>
   <data name="EmptyBasket" xml:space="preserve">
-    <value>Корзина пустая</value>
+    <value>Кошик порожній</value>
   </data>
   <data name="English" xml:space="preserve">
-    <value>Английский</value>
+    <value>Англійска</value>
   </data>
   <data name="File size" xml:space="preserve">
     <value>Размер файла</value>
   </data>
   <data name="Filter" xml:space="preserve">
-    <value>Фильтровать</value>
+    <value>Фільтрувати</value>
   </data>
   <data name="FollowUs" xml:space="preserve">
-    <value>Следите за нами</value>
+    <value>Слідкуйте за нами</value>
   </data>
   <data name="From" xml:space="preserve">
-    <value>От</value>
+    <value>Від</value>
   </data>
   <data name="From the Blog" xml:space="preserve">
-    <value>Из блога</value>
+    <value>З блога</value>
   </data>
   <data name="Hotel" xml:space="preserve">
-    <value>Игра</value>
+    <value>Готель</value>
   </data>
   <data name="GameCount" xml:space="preserve">
     <value>Общее количество игр</value>
   </data>
   <data name="GameDescription" xml:space="preserve">
-    <value>Описание игры</value>
+    <value>Опис готелю</value>
   </data>
   <data name="Genres" xml:space="preserve">
-    <value>Жанры</value>
+    <value>жанри</value>
   </data>
   <data name="GetInTouch" xml:space="preserve">
-    <value>Связь с нами</value>
+    <value>Звязок з нами</value>
   </data>
   <data name="GoBacktoGameList" xml:space="preserve">
-    <value>Вернуться к списку игр</value>
+    <value>Повернутись до списку</value>
   </data>
   <data name="Hello" xml:space="preserve">
-    <value>Привет</value>
+    <value>Привіт</value>
   </data>
   <data name="HomePage" xml:space="preserve">
-    <value>Домашняя страница</value>
+    <value>Домашня сторінка</value>
   </data>
   <data name="Hotels" xml:space="preserve">
-    <value>Отели</value>
+    <value>Готелі</value>
   </data>
   <data name="IBoxPayment" xml:space="preserve">
     <value>Оплата через IBox</value>
   </data>
   <data name="Items" xml:space="preserve">
-    <value>Едениц</value>
+    <value>Одиниць</value>
   </data>
   <data name="ItemsPerPage" xml:space="preserve">
-    <value>Количество едениц</value>
+    <value>Кількість одиниць</value>
   </data>
   <data name="Key" xml:space="preserve">
     <value>Ключ</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Язык</value>
+    <value>Мова</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
-    <value>Узнай больше</value>
+    <value>Дізнайся більше</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Войти</value>
+    <value>Ввійти</value>
   </data>
   <data name="LoginDenied" xml:space="preserve">
-    <value>Недостаточно прав для доступа к ресурсу</value>
+    <value>Недостатньо прав для доступу</value>
   </data>
   <data name="MakeOrder" xml:space="preserve">
-    <value>Заказать</value>
+    <value>Замовити</value>
   </data>
   <data name="ManageOrders" xml:space="preserve">
-    <value>Управление заказами</value>
+    <value>Керування замовленнями</value>
   </data>
   <data name="ManageRoles" xml:space="preserve">
-    <value>Управление ролями</value>
+    <value>Керування ролями</value>
   </data>
   <data name="ManageUsers" xml:space="preserve">
-    <value>Управление пользователями</value>
+    <value>Керування користувачами</value>
   </data>
   <data name="Message" xml:space="preserve">
-    <value>Сообщение</value>
+    <value>Повідомлення</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>Название</value>
+    <value>Назва</value>
   </data>
   <data name="NewComment" xml:space="preserve">
-    <value>Добавить комментарий</value>
+    <value>Добавити коментар</value>
   </data>
   <data name="OderSummary" xml:space="preserve">
-    <value>Итог заказа</value>
+    <value>Підсумок заказу</value>
   </data>
   <data name="Order" xml:space="preserve">
     <value>Заказ</value>
   </data>
   <data name="OrderHistory" xml:space="preserve">
-    <value>История заказов</value>
+    <value>Історія заказів</value>
   </data>
   <data name="Other" xml:space="preserve">
-    <value>Другой</value>
+    <value>Інший</value>
   </data>
   <data name="ParentGenre" xml:space="preserve">
     <value>Поджанр</value>
@@ -343,117 +343,135 @@
     <value>Платформы</value>
   </data>
   <data name="Price" xml:space="preserve">
-    <value>Цена</value>
+    <value>Ціна</value>
   </data>
   <data name="PriceRange" xml:space="preserve">
-    <value>Диапазон цен</value>
+    <value>Діапазон цін</value>
   </data>
   <data name="Publish" xml:space="preserve">
-    <value>Публиковать</value>
+    <value>Публікувати</value>
   </data>
   <data name="Room" xml:space="preserve">
-    <value>Издатель</value>
+    <value>Кімната</value>
   </data>
   <data name="Rooms" xml:space="preserve">
-    <value>Издатели</value>
+    <value>Кімнати</value>
   </data>
   <data name="Quantity" xml:space="preserve">
-    <value>Количество</value>
+    <value>Кількість</value>
   </data>
   <data name="Quote" xml:space="preserve">
-    <value>Цитировать</value>
+    <value>Цитувати</value>
   </data>
   <data name="RefineResults" xml:space="preserve">
-    <value>Обработать результаты</value>
+    <value>Обробити результати</value>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>Регистрация</value>
+    <value>Регістрація</value>
   </data>
   <data name="Released" xml:space="preserve">
-    <value>Выпущено</value>
+    <value>Випущено</value>
   </data>
   <data name="ReleaseDate" xml:space="preserve">
-    <value>Дата релиза</value>
+    <value>Дата релізу</value>
   </data>
   <data name="Remove" xml:space="preserve">
-    <value>Удалить</value>
+    <value>Видалити</value>
   </data>
   <data name="Reply" xml:space="preserve">
-    <value>Ответить</value>
+    <value>Відповісти</value>
   </data>
   <data name="Reviews" xml:space="preserve">
-    <value>Отзывы</value>
+    <value>Відгути</value>
   </data>
   <data name="Role" xml:space="preserve">
     <value>Роль</value>
   </data>
   <data name="Russian" xml:space="preserve">
-    <value>Русский</value>
+    <value>Українська</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Сохранить</value>
+    <value>Зберегти</value>
   </data>
   <data name="SearchGame" xml:space="preserve">
-    <value>Найти игру</value>
+    <value>Знайти готель</value>
   </data>
   <data name="SignIn" xml:space="preserve">
-    <value>Вход</value>
+    <value>Вхід</value>
   </data>
   <data name="SignOut" xml:space="preserve">
-    <value>Выход</value>
+    <value>Вихід</value>
   </data>
   <data name="SignUp" xml:space="preserve">
-    <value>Регистрация</value>
+    <value>Регістрація</value>
   </data>
   <data name="SiteLinks" xml:space="preserve">
-    <value>Ссылки сайта</value>
+    <value>Посилання на сайт</value>
   </data>
   <data name="SocialMedia" xml:space="preserve">
-    <value>Социальные сети</value>
+    <value>Соціальні мережі</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>Сортировка</value>
+    <value>Сортування</value>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>Подтвердить</value>
+    <value>Підтвердити</value>
   </data>
   <data name="Subtotal" xml:space="preserve">
-    <value>Промежуточная цена</value>
+    <value>Проміжна ціна</value>
   </data>
   <data name="Taxes" xml:space="preserve">
     <value>Налоги</value>
   </data>
   <data name="Testimonials" xml:space="preserve">
-    <value>Рекомендации</value>
+    <value>Рекомендації</value>
   </data>
   <data name="To" xml:space="preserve">
     <value>До</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>Всего</value>
+    <value>Всього</value>
   </data>
   <data name="TwitterUpdates" xml:space="preserve">
-    <value>Обновления Twitter</value>
+    <value>Оновлення Twitter</value>
   </data>
   <data name="Type" xml:space="preserve">
     <value>Тип</value>
   </data>
   <data name="UnitsInStock" xml:space="preserve">
-    <value>В наявности</value>
+    <value>В наявності</value>
   </data>
   <data name="Unknown" xml:space="preserve">
-    <value>Неизвестный</value>
+    <value>Невідомий</value>
   </data>
   <data name="VisaPayment" xml:space="preserve">
     <value>Оплата через Visa</value>
   </data>
   <data name="VisitBlog" xml:space="preserve">
-    <value>Посетить наш блог</value>
+    <value>Відвідати наш блок</value>
   </data>
   <data name="WhatCanMakeYourLifeEasier" xml:space="preserve">
-    <value>Сделай свою жизнь проще!</value>
+    <value>Зроби своє життя простіше!</value>
   </data>
   <data name="WhatYouGet" xml:space="preserve">
-    <value>Что вы получаете</value>
+    <value>Що ви отримуєте?</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Вільний</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Країна</value>
+  </data>
+  <data name="HotelSize" xml:space="preserve">
+    <value>Розмір готеля</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Розположення</value>
+  </data>
+  <data name="OrderRoom" xml:space="preserve">
+    <value>Забронювати</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Рейтинг</value>
   </data>
 </root>

@@ -13,7 +13,7 @@
                 
                 <div class="hotel-list-desc col-md-9">
                     <div class="hotel-list-Rating">
-                        <span>Rating: @item.Rating</span>
+                        <span>@Resources.Rating: @item.Rating</span>
                     </div>
                     <div class="hotel-list-name">
                         <h3> @Html.ActionLink(item.Name, "GetDetailsByKey", "Hotel", new { hotelId = item.Id })</h3>
@@ -23,10 +23,10 @@
                         <p>@item.Country - @item.City - @item.Location</p>
                     </div>
                     <div class="hotel-list-available">
-                        <span>Available rooms: @item.AvailableRooms</span>
+                        <span>@Resources.Available: @item.AvailableRooms</span>
                     </div>
                     <div class="hotel-list-name float-right">
-                        <h3> @Html.ActionLink("Book a room", "GetDetailsByKey", "Hotel", new { hotelId = item.Id }, new {@class = "btn"})</h3>
+                        <h3> @Html.ActionLink(Resources.OrderRoom, "GetDetailsByKey", "Hotel", new { hotelId = item.Id }, new {@class = "btn"})</h3>
 
                     </div>
                 </div>

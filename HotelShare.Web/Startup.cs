@@ -64,7 +64,7 @@ namespace HotelShare.Web
             var supportedCultures = new[]
             {
                 new CultureInfo("en-US"),
-                new CultureInfo("ru")
+                new CultureInfo("uk-UA")
             };
 
             if (env.IsDevelopment())
@@ -83,7 +83,7 @@ namespace HotelShare.Web
 
             app.UseRequestLocalization(new RequestLocalizationOptions
             {
-                DefaultRequestCulture = new RequestCulture("ru"),
+                DefaultRequestCulture = new RequestCulture("uk-UA"),
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures
             });
@@ -111,7 +111,7 @@ namespace HotelShare.Web
                 var supportedCultures = new[]
                 {
                     new CultureInfo("en-US"),
-                    new CultureInfo("ru")
+                    new CultureInfo("uk-UA")
                 };
 
                 options.DefaultRequestCulture = new RequestCulture("en-US");

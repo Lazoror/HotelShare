@@ -38,7 +38,7 @@
         }
         <div class="back-link">
             <img src="~/images/Arrow-left.svg" alt="Arrow left" />
-            <a asp-action="Index">Back to hotels</a>
+            <a asp-action="Index">@Resources.BackToList</a>
         </div>
     </div>
 
@@ -107,13 +107,13 @@
 
             <div class="hotel-platforms">
                 <div class="platform-title">
-                    <p>Location</p>
+                    <p>@Resources.Location</p>
                 </div>
                 <p>@Model.HotelViewModel.Location</p>
             </div>
             <div class="hotel-size">
                 <div class="size-title">
-                    <p>Hotel size</p>
+                    <p>@Resources.HotelSize</p>
                 </div>
                 <div class="size-info">
                     <p>100 Rooms</p>
@@ -121,7 +121,7 @@
             </div>
             <div class="hotel-genres">
                 <div class="genre-title">
-                    <p>Country</p>
+                    <p>@Resources.Location</p>
                 </div>
                 <p>@Model.HotelViewModel.Country</p>
             </div>
@@ -149,23 +149,23 @@
                 </div>
                 <div class="room-info col-md-9">
                     <div class="room-name">
-                        <label><b>Room name:</b></label>
+                        <label><b>@Resources.Name:</b></label>
                         <span>@room.RoomName</span>
                     </div>
                     <div class="room-description">
-                        <label><b>Description:</b></label>
+                        <label><b>@Resources.Description:</b></label>
                         <span>@room.Description</span>
                     </div>
                     <div class="room-available">
-                        <label><b>Available:</b></label>
+                        <label><b>@Resources.Available:</b></label>
                         <span>@room.IsAvailable</span>
                     </div>
                     <div class="room-available">
-                        <label><b>Price:</b></label>
+                        <label><b>@Resources.Price:</b></label>
                         <span>@room.Price</span>
                     </div>
                     <div class="room-book">
-                        @Html.ActionLink("Order room", "AddToBasket", "Basket", new { roomId = room.Id}, new {@class = "btn"})
+                        @Html.ActionLink(@Resources.OrderRoom, "AddToBasket", "Basket", new { roomId = room.Id}, new {@class = "btn"})
                     </div>
                 </div>
                 

@@ -61,7 +61,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация.
+        ///   Looks up a localized string similar to Інформація.
         /// </summary>
         public static string About {
             get {
@@ -70,7 +70,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить.
+        ///   Looks up a localized string similar to Добавити.
         /// </summary>
         public static string Add {
             get {
@@ -79,7 +79,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить жанры.
+        ///   Looks up a localized string similar to Добавити жанри.
         /// </summary>
         public static string AddGenres {
             get {
@@ -88,7 +88,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить платформы.
+        ///   Looks up a localized string similar to Добавити платформи.
         /// </summary>
         public static string AddPlatforms {
             get {
@@ -97,7 +97,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить в корзину.
+        ///   Looks up a localized string similar to Добавити у кошик.
         /// </summary>
         public static string AddToCart {
             get {
@@ -106,7 +106,16 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Награды.
+        ///   Looks up a localized string similar to Вільний.
+        /// </summary>
+        public static string Available {
+            get {
+                return ResourceManager.GetString("Available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Нагороди.
         /// </summary>
         public static string Awards {
             get {
@@ -115,7 +124,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вернуться назад.
+        ///   Looks up a localized string similar to Повернутись назад.
         /// </summary>
         public static string BackToList {
             get {
@@ -124,7 +133,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Забанить.
+        ///   Looks up a localized string similar to Забанити.
         /// </summary>
         public static string Ban {
             get {
@@ -151,7 +160,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Корзина.
+        ///   Looks up a localized string similar to Кошик.
         /// </summary>
         public static string Basket {
             get {
@@ -160,7 +169,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить.
+        ///   Looks up a localized string similar to Змінити.
         /// </summary>
         public static string Change {
             get {
@@ -169,7 +178,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить издателя.
+        ///   Looks up a localized string similar to Змінити кімнату.
         /// </summary>
         public static string ChangeRoom {
             get {
@@ -178,7 +187,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Оформить.
+        ///   Looks up a localized string similar to Оформити.
         /// </summary>
         public static string Checkout {
             get {
@@ -187,7 +196,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Комментарий.
+        ///   Looks up a localized string similar to Коментарій.
         /// </summary>
         public static string Comment {
             get {
@@ -196,7 +205,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Коментарий.
+        ///   Looks up a localized string similar to Коментарій.
         /// </summary>
         public static string CommentGame {
             get {
@@ -205,7 +214,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Комментарии.
+        ///   Looks up a localized string similar to Коментарії.
         /// </summary>
         public static string Comments {
             get {
@@ -214,7 +223,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Комментариев.
+        ///   Looks up a localized string similar to Коментарія.
         /// </summary>
         public static string CommentsGame {
             get {
@@ -223,7 +232,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to О компании.
+        ///   Looks up a localized string similar to Про компанію.
         /// </summary>
         public static string CompanyInformation {
             get {
@@ -232,7 +241,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Название компании.
+        ///   Looks up a localized string similar to Назва компанії.
         /// </summary>
         public static string CompanyName {
             get {
@@ -241,7 +250,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подтверидть пароль.
+        ///   Looks up a localized string similar to Підтвердити пароль.
         /// </summary>
         public static string ConfirmPassword {
             get {
@@ -250,7 +259,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Контакты.
+        ///   Looks up a localized string similar to Контакти.
         /// </summary>
         public static string Contact {
             get {
@@ -259,7 +268,16 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Создать.
+        ///   Looks up a localized string similar to Країна.
+        /// </summary>
+        public static string Country {
+            get {
+                return ResourceManager.GetString("Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити.
         /// </summary>
         public static string Create {
             get {
@@ -268,7 +286,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Создать новую игру.
+        ///   Looks up a localized string similar to Створити новий готель.
         /// </summary>
         public static string CreateGame {
             get {
@@ -277,7 +295,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить.
+        ///   Looks up a localized string similar to Видалити.
         /// </summary>
         public static string Delete {
             get {
@@ -286,7 +304,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить жанры.
+        ///   Looks up a localized string similar to Видалити жанри.
         /// </summary>
         public static string DeleteGenres {
             get {
@@ -295,7 +313,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить платформы.
+        ///   Looks up a localized string similar to Видалити платформи.
         /// </summary>
         public static string DeletePlatforms {
             get {
@@ -304,7 +322,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Описание.
+        ///   Looks up a localized string similar to Опис.
         /// </summary>
         public static string Description {
             get {
@@ -313,7 +331,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Детали.
+        ///   Looks up a localized string similar to Деталі.
         /// </summary>
         public static string Details {
             get {
@@ -322,7 +340,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Больше не издается.
+        ///   Looks up a localized string similar to Більше немає.
         /// </summary>
         public static string Discontinued {
             get {
@@ -331,7 +349,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Скидка.
+        ///   Looks up a localized string similar to Знижка.
         /// </summary>
         public static string Discount {
             get {
@@ -349,7 +367,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить.
+        ///   Looks up a localized string similar to Змінити.
         /// </summary>
         public static string Edit {
             get {
@@ -367,7 +385,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Простое решение для повседневных задач.
+        ///   Looks up a localized string similar to Просте рішення для щоденних задач.
         /// </summary>
         public static string EmpoweredSolutionswithSimpleProcess {
             get {
@@ -376,7 +394,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Корзина пустая.
+        ///   Looks up a localized string similar to Кошик порожній.
         /// </summary>
         public static string EmptyBasket {
             get {
@@ -385,7 +403,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Английский.
+        ///   Looks up a localized string similar to Англійска.
         /// </summary>
         public static string English {
             get {
@@ -403,7 +421,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Фильтровать.
+        ///   Looks up a localized string similar to Фільтрувати.
         /// </summary>
         public static string Filter {
             get {
@@ -412,7 +430,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Следите за нами.
+        ///   Looks up a localized string similar to Слідкуйте за нами.
         /// </summary>
         public static string FollowUs {
             get {
@@ -421,7 +439,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to От.
+        ///   Looks up a localized string similar to Від.
         /// </summary>
         public static string From {
             get {
@@ -430,7 +448,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Из блога.
+        ///   Looks up a localized string similar to З блога.
         /// </summary>
         public static string From_the_Blog {
             get {
@@ -448,7 +466,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Описание игры.
+        ///   Looks up a localized string similar to Опис готелю.
         /// </summary>
         public static string GameDescription {
             get {
@@ -457,7 +475,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Жанры.
+        ///   Looks up a localized string similar to жанри.
         /// </summary>
         public static string Genres {
             get {
@@ -466,7 +484,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Связь с нами.
+        ///   Looks up a localized string similar to Звязок з нами.
         /// </summary>
         public static string GetInTouch {
             get {
@@ -475,7 +493,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вернуться к списку игр.
+        ///   Looks up a localized string similar to Повернутись до списку.
         /// </summary>
         public static string GoBacktoGameList {
             get {
@@ -484,7 +502,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Привет.
+        ///   Looks up a localized string similar to Привіт.
         /// </summary>
         public static string Hello {
             get {
@@ -493,7 +511,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Домашняя страница.
+        ///   Looks up a localized string similar to Домашня сторінка.
         /// </summary>
         public static string HomePage {
             get {
@@ -502,7 +520,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Игра.
+        ///   Looks up a localized string similar to Готель.
         /// </summary>
         public static string Hotel {
             get {
@@ -511,11 +529,20 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отели.
+        ///   Looks up a localized string similar to Готелі.
         /// </summary>
         public static string Hotels {
             get {
                 return ResourceManager.GetString("Hotels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Розмір готеля.
+        /// </summary>
+        public static string HotelSize {
+            get {
+                return ResourceManager.GetString("HotelSize", resourceCulture);
             }
         }
         
@@ -529,7 +556,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Едениц.
+        ///   Looks up a localized string similar to Одиниць.
         /// </summary>
         public static string Items {
             get {
@@ -538,7 +565,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Количество едениц.
+        ///   Looks up a localized string similar to Кількість одиниць.
         /// </summary>
         public static string ItemsPerPage {
             get {
@@ -556,7 +583,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Язык.
+        ///   Looks up a localized string similar to Мова.
         /// </summary>
         public static string Language {
             get {
@@ -565,7 +592,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Узнай больше.
+        ///   Looks up a localized string similar to Дізнайся більше.
         /// </summary>
         public static string LearnMore {
             get {
@@ -574,7 +601,16 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Войти.
+        ///   Looks up a localized string similar to Розположення.
+        /// </summary>
+        public static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ввійти.
         /// </summary>
         public static string Login {
             get {
@@ -583,7 +619,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Недостаточно прав для доступа к ресурсу.
+        ///   Looks up a localized string similar to Недостатньо прав для доступу.
         /// </summary>
         public static string LoginDenied {
             get {
@@ -592,7 +628,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Заказать.
+        ///   Looks up a localized string similar to Замовити.
         /// </summary>
         public static string MakeOrder {
             get {
@@ -601,7 +637,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Управление заказами.
+        ///   Looks up a localized string similar to Керування замовленнями.
         /// </summary>
         public static string ManageOrders {
             get {
@@ -610,7 +646,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Управление ролями.
+        ///   Looks up a localized string similar to Керування ролями.
         /// </summary>
         public static string ManageRoles {
             get {
@@ -619,7 +655,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Управление пользователями.
+        ///   Looks up a localized string similar to Керування користувачами.
         /// </summary>
         public static string ManageUsers {
             get {
@@ -628,7 +664,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сообщение.
+        ///   Looks up a localized string similar to Повідомлення.
         /// </summary>
         public static string Message {
             get {
@@ -637,7 +673,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Название.
+        ///   Looks up a localized string similar to Назва.
         /// </summary>
         public static string Name {
             get {
@@ -646,7 +682,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить комментарий.
+        ///   Looks up a localized string similar to Добавити коментар.
         /// </summary>
         public static string NewComment {
             get {
@@ -655,7 +691,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Итог заказа.
+        ///   Looks up a localized string similar to Підсумок заказу.
         /// </summary>
         public static string OderSummary {
             get {
@@ -673,7 +709,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to История заказов.
+        ///   Looks up a localized string similar to Історія заказів.
         /// </summary>
         public static string OrderHistory {
             get {
@@ -682,7 +718,16 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Другой.
+        ///   Looks up a localized string similar to Забронювати.
+        /// </summary>
+        public static string OrderRoom {
+            get {
+                return ResourceManager.GetString("OrderRoom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Інший.
         /// </summary>
         public static string Other {
             get {
@@ -736,7 +781,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Цена.
+        ///   Looks up a localized string similar to Ціна.
         /// </summary>
         public static string Price {
             get {
@@ -745,7 +790,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Диапазон цен.
+        ///   Looks up a localized string similar to Діапазон цін.
         /// </summary>
         public static string PriceRange {
             get {
@@ -754,7 +799,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Публиковать.
+        ///   Looks up a localized string similar to Публікувати.
         /// </summary>
         public static string Publish {
             get {
@@ -763,7 +808,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Количество.
+        ///   Looks up a localized string similar to Кількість.
         /// </summary>
         public static string Quantity {
             get {
@@ -772,7 +817,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Цитировать.
+        ///   Looks up a localized string similar to Цитувати.
         /// </summary>
         public static string Quote {
             get {
@@ -781,7 +826,16 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Обработать результаты.
+        ///   Looks up a localized string similar to Рейтинг.
+        /// </summary>
+        public static string Rating {
+            get {
+                return ResourceManager.GetString("Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Обробити результати.
         /// </summary>
         public static string RefineResults {
             get {
@@ -790,7 +844,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Регистрация.
+        ///   Looks up a localized string similar to Регістрація.
         /// </summary>
         public static string Register {
             get {
@@ -799,7 +853,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Выпущено.
+        ///   Looks up a localized string similar to Випущено.
         /// </summary>
         public static string Released {
             get {
@@ -808,7 +862,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Дата релиза.
+        ///   Looks up a localized string similar to Дата релізу.
         /// </summary>
         public static string ReleaseDate {
             get {
@@ -817,7 +871,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить.
+        ///   Looks up a localized string similar to Видалити.
         /// </summary>
         public static string Remove {
             get {
@@ -826,7 +880,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ответить.
+        ///   Looks up a localized string similar to Відповісти.
         /// </summary>
         public static string Reply {
             get {
@@ -835,7 +889,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отзывы.
+        ///   Looks up a localized string similar to Відгути.
         /// </summary>
         public static string Reviews {
             get {
@@ -853,7 +907,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Издатель.
+        ///   Looks up a localized string similar to Кімната.
         /// </summary>
         public static string Room {
             get {
@@ -862,7 +916,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Издатели.
+        ///   Looks up a localized string similar to Кімнати.
         /// </summary>
         public static string Rooms {
             get {
@@ -871,7 +925,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Русский.
+        ///   Looks up a localized string similar to Українська.
         /// </summary>
         public static string Russian {
             get {
@@ -880,7 +934,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сохранить.
+        ///   Looks up a localized string similar to Зберегти.
         /// </summary>
         public static string Save {
             get {
@@ -889,7 +943,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Найти игру.
+        ///   Looks up a localized string similar to Знайти готель.
         /// </summary>
         public static string SearchGame {
             get {
@@ -898,7 +952,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вход.
+        ///   Looks up a localized string similar to Вхід.
         /// </summary>
         public static string SignIn {
             get {
@@ -907,7 +961,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Выход.
+        ///   Looks up a localized string similar to Вихід.
         /// </summary>
         public static string SignOut {
             get {
@@ -916,7 +970,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Регистрация.
+        ///   Looks up a localized string similar to Регістрація.
         /// </summary>
         public static string SignUp {
             get {
@@ -925,7 +979,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ссылки сайта.
+        ///   Looks up a localized string similar to Посилання на сайт.
         /// </summary>
         public static string SiteLinks {
             get {
@@ -934,7 +988,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Социальные сети.
+        ///   Looks up a localized string similar to Соціальні мережі.
         /// </summary>
         public static string SocialMedia {
             get {
@@ -943,7 +997,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сортировка.
+        ///   Looks up a localized string similar to Сортування.
         /// </summary>
         public static string Sorting {
             get {
@@ -952,7 +1006,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подтвердить.
+        ///   Looks up a localized string similar to Підтвердити.
         /// </summary>
         public static string Submit {
             get {
@@ -961,7 +1015,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Промежуточная цена.
+        ///   Looks up a localized string similar to Проміжна ціна.
         /// </summary>
         public static string Subtotal {
             get {
@@ -979,7 +1033,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Рекомендации.
+        ///   Looks up a localized string similar to Рекомендації.
         /// </summary>
         public static string Testimonials {
             get {
@@ -997,7 +1051,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Всего.
+        ///   Looks up a localized string similar to Всього.
         /// </summary>
         public static string Total {
             get {
@@ -1006,7 +1060,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Обновления Twitter.
+        ///   Looks up a localized string similar to Оновлення Twitter.
         /// </summary>
         public static string TwitterUpdates {
             get {
@@ -1024,7 +1078,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to В наявности.
+        ///   Looks up a localized string similar to В наявності.
         /// </summary>
         public static string UnitsInStock {
             get {
@@ -1033,7 +1087,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Неизвестный.
+        ///   Looks up a localized string similar to Невідомий.
         /// </summary>
         public static string Unknown {
             get {
@@ -1051,7 +1105,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Посетить наш блог.
+        ///   Looks up a localized string similar to Відвідати наш блок.
         /// </summary>
         public static string VisitBlog {
             get {
@@ -1060,7 +1114,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сделай свою жизнь проще!.
+        ///   Looks up a localized string similar to Зроби своє життя простіше!.
         /// </summary>
         public static string WhatCanMakeYourLifeEasier {
             get {
@@ -1069,7 +1123,7 @@ namespace HotelShare.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Что вы получаете.
+        ///   Looks up a localized string similar to Що ви отримуєте?.
         /// </summary>
         public static string WhatYouGet {
             get {

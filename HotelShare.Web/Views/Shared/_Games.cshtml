@@ -29,7 +29,7 @@
                 @if (User.Identity.IsAuthenticated)
                 {
 
-                    <span class="create-hotel"><a asp-action="Add" asp-controller="Hotel" class="btn">Create new hotel</a></span>
+                    <span class="create-hotel"><a asp-action="Add" asp-controller="Hotel" class="btn">@Resources.CreateGame</a></span>
 
                 }
                 <div class="search-form">
@@ -64,7 +64,7 @@
             <div class="col-md-4">
                 <form asp-action="Index" asp-controller="Hotel" method="get" id="filterForm">
                     <div class="sidebar-title">
-                        <p>Refine Results</p>
+                        <p>@Resources.RefineResults</p>
                     </div>
                     <div class="sidebar">
                         <div class="sidebar-sorting">

@@ -453,4 +453,22 @@
   <data name="WhatYouGet" xml:space="preserve">
     <value>What You Get</value>
   </data>
+  <data name="Available" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="HotelSize" xml:space="preserve">
+    <value>HotelSize</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="OrderRoom" xml:space="preserve">
+    <value>OrderRoom</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Rating</value>
+  </data>
 </root>
