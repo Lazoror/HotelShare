@@ -9,6 +9,7 @@ namespace HotelShare.Web.ViewModels.Account
         public string Email { get; set; }
 
         [Required, DataType(DataType.Password)]
+        [RegularExpression(@"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$", ErrorMessage = "Password need have one character, digit, upper and lower case")]
         public string Password { get; set; }
 
         [DataType(DataType.Password), Compare(nameof(Password))]

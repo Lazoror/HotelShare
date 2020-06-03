@@ -1,7 +1,7 @@
-﻿using HotelShare.Domain.Models.SqlModels.OrderModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using HotelShare.Domain.Models.SqlModels.OrderModels;
 
 namespace HotelShare.Interfaces.Services
 {
@@ -24,6 +24,8 @@ namespace HotelShare.Interfaces.Services
         void EditOrderDetail(OrderDetail entity);
 
         void EditOrder(Order order);
+
+        IEnumerable<Order> GetOrderedRooms(Guid customerId);
 
         MemoryStream GenerateInvoiceFile(ProcessPaymentModel orderInfo);
     }

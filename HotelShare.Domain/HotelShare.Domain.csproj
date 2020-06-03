@@ -7,7 +7,6 @@
   <ItemGroup>
     <Folder Include="Models\SqlModels\AccountModels\" />
     <Folder Include="Models\SqlModels\CommentModels\" />
-    <Folder Include="Models\SqlModels\FilterModels\" />
     <Folder Include="Models\SqlModels\OrderModels\" />
   </ItemGroup>
 

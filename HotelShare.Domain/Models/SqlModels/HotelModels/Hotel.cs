@@ -1,14 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using HotelShare.Domain.Models.SqlModels.CommentModels;
+using Newtonsoft.Json;
 
-namespace HotelShare.Domain.Models.SqlModels.GameModels
+namespace HotelShare.Domain.Models.SqlModels.HotelModels
 {
     public class Hotel : BaseEntity
     {
+        [Required]
+        [DataType(DataType.Text)]
+        [MinLength(10)]
+        [MaxLength(256)]
         public string Name { get; set; }
 
+        [Required]
+        [DataType(DataType.Text)]
+        [MinLength(10)]
+        [MaxLength(256)]
         public string Description { get; set; }
+
 
         public short AvailableRooms { get; set; }
 
@@ -18,22 +28,13 @@ namespace HotelShare.Domain.Models.SqlModels.GameModels
 
         public decimal Rating { get; set; }
 
-        public int RatingQuantity { get; set; }
-
-        public string City { get; set; }
-
-        public string Country { get; set; }
-
-        public DateTime AddDate { get; set; }
-
-        public int ViewCount { get; set; }
-
-        public string Location { get; set; }
-
+        [JsonIgnore]
         public ICollection<Room> Rooms { get; set; }
 
+        [JsonIgnore]
         public ICollection<Comment> Comments { get; set; }
 
-        public ICollection<HotelImage> GameImages { get; set; }
+        [JsonIgnore]
+        public ICollection<HotelImage> HotelImages { get; set; }
     }
 }

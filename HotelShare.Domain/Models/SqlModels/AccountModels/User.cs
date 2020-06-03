@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotelShare.Domain.Models.SqlModels.AccountModels
 {
@@ -8,6 +9,7 @@ namespace HotelShare.Domain.Models.SqlModels.AccountModels
 
         public string Email { get; set; }
 
+        [MaxLength(32), MinLength(6)]
         public string Password { get; set; }
 
         public bool IsDeleted { get; set; }

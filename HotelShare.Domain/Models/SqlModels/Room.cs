@@ -1,11 +1,12 @@
 ﻿
 using System;
-using HotelShare.Domain.Models.SqlModels.GameModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 
 namespace HotelShare.Domain.Models.SqlModels
 {
     public class Room : BaseEntity
     {
+
         public string RoomName { get; set; }
 
         public string Description { get; set; }
@@ -13,6 +14,7 @@ namespace HotelShare.Domain.Models.SqlModels
         public string Facilities { get; set; }
 
         public bool IsDeleted { get; set; }
+
 
         public decimal Price { get; set; }
 

@@ -10,9 +10,15 @@ namespace HotelShare.Web.ViewModels.Hotel
         public Guid Id { get; set; }
 
         [Required]
+        [DataType(DataType.Text)]
+        [MinLength(5)]
+        [MaxLength(256)]
         public string Name { get; set; }
 
         [Required]
+        [DataType(DataType.Text)]
+        [MinLength(5)]
+        [MaxLength(256)]
         public string Description { get; set; }
 
         [Required]

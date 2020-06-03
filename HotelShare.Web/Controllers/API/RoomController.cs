@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using HotelShare.Domain.Models.SqlModels;
 using HotelShare.Interfaces.Services;
@@ -6,8 +8,7 @@ using HotelShare.Web.ViewModels.Room;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
+using Newtonsoft.Json;
 
 namespace HotelShare.Web.Controllers.API
 {
@@ -53,6 +54,20 @@ namespace HotelShare.Web.Controllers.API
             return NoContent();
         }
 
+        [HttpGet("hotel/{hotelId}")]
+        public IActionResult GetHotelRooms(Guid hotelId)
+        {
+            var rooms = _roomService.GetHotelRooms(hotelId);
+
+            if (rooms != null)
+            {
+                var jsonRooms = JsonConvert.SerializeObject(rooms);
+
+                return Ok(jsonRooms);
+            }
+
+            return NoContent();
+        }
 
         [HttpPost("delete/{companyName}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]

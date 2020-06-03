@@ -1,6 +1,6 @@
 ﻿using HotelShare.DAL.Data;
 using HotelShare.Domain.Enums;
-using HotelShare.Domain.Models.SqlModels.GameModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 using HotelShare.Interfaces.DAL.RepositorySql;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -56,7 +56,7 @@ namespace HotelShare.DAL.Repository.SqlRepositories
         {
             var set = _set.AsQueryable();
 
-            set = set.Include(g => g.Rooms).Include(g => g.Comments).Include(g => g.GameImages);
+            set = set.Include(g => g.Rooms).Include(g => g.Comments).Include(g => g.HotelImages);
 
             if (filter != null)
             {
@@ -83,7 +83,7 @@ namespace HotelShare.DAL.Repository.SqlRepositories
         {
             var set = _set.AsQueryable();
 
-            set = set.Include(g => g.Rooms).Include(g => g.Comments).Include(g => g.GameImages);
+            set = set.Include(g => g.Rooms).Include(g => g.Comments).Include(g => g.HotelImages);
 
             return set.FirstOrDefault(filter);
         }

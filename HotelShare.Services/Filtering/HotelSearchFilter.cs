@@ -1,14 +1,14 @@
-﻿using HotelShare.Domain.Models.SqlModels.GameModels;
-using System;
+﻿using System;
 using System.Linq.Expressions;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 
 namespace HotelShare.Services.Filtering
 {
-    public class GameSearchFilter : IFilter<Expression<Func<Hotel, bool>>>
+    public class HotelSearchFilter : IFilter<Expression<Func<Hotel, bool>>>
     {
         private readonly string _searchString;
 
-        public GameSearchFilter(string searchString)
+        public HotelSearchFilter(string searchString)
         {
             _searchString = searchString;
         }

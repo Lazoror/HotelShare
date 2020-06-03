@@ -251,7 +251,7 @@ namespace HotelShare.DAL.Migrations
             modelBuilder.Entity("HotelShare.Domain.Models.SqlModels.GameModels.HotelImage", b =>
                 {
                     b.HasOne("HotelShare.Domain.Models.SqlModels.GameModels.Hotel", "Hotel")
-                        .WithMany("GameImages")
+                        .WithMany("HotelImages")
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade);
 

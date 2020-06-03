@@ -1,4 +1,4 @@
-﻿using HotelShare.Domain.Models.SqlModels.GameModels;
+﻿using HotelShare.Domain.Models.SqlModels.HotelModels;
 using System;
 using System.Linq.Expressions;
 

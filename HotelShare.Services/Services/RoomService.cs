@@ -1,12 +1,12 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using AutoMapper;
 using HotelShare.Domain.Models.SqlModels;
 using HotelShare.Interfaces.DAL.Data;
 using HotelShare.Interfaces.DAL.RepositorySql;
 using HotelShare.Interfaces.Services;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 
 namespace HotelShare.Services.Services
 {
@@ -64,6 +64,13 @@ namespace HotelShare.Services.Services
         {
             var rooms = _roomRepository.GetMany();
             var translatedRooms = new List<Room>();
+
+            return rooms;
+        }
+
+        public IEnumerable<Room> GetHotelRooms(Guid hotelId)
+        {
+            var rooms = _roomRepository.GetMany(filter: x => x.HotelId == hotelId).ToList();
 
             return rooms;
         }

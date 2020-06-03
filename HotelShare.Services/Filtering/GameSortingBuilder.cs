@@ -25,12 +25,6 @@ namespace HotelShare.Services.Filtering
                 case SortType.MostCommented:
                     _sortingModel = new SortingModel { SortDirection = SortDirection.Descending, OrderExpression = g => g.Comments.Count };
                     break;
-                case SortType.MostPopular:
-                    _sortingModel = new SortingModel { SortDirection = SortDirection.Descending, OrderExpression = g => g.ViewCount };
-                    break;
-                case SortType.New:
-                    _sortingModel = new SortingModel { SortDirection = SortDirection.Descending, OrderExpression = g => g.AddDate };
-                    break;
             }
 
             return this;

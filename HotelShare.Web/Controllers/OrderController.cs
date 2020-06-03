@@ -1,4 +1,6 @@
-﻿using Autofac.Features.Indexed;
+﻿using System;
+using System.Linq;
+using Autofac.Features.Indexed;
 using AutoMapper;
 using HotelShare.Domain;
 using HotelShare.Domain.Enums;
@@ -8,8 +10,6 @@ using HotelShare.Web.Attributes;
 using HotelShare.Web.Payment;
 using HotelShare.Web.ViewModels.Payment;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
 
 namespace HotelShare.Web.Controllers
 {
@@ -135,7 +135,7 @@ namespace HotelShare.Web.Controllers
         {
             var user = _userService.GetUserById(userId);
             var order = _orderService.GetAllCartOrder(user.Email);
-            order.OrderStatus = OrderStatus.Shipped;
+            order.OrderStatus = OrderStatus.Paid;
             _orderService.EditOrder(order);
 
             return RedirectToAction(nameof(ManageOrders));

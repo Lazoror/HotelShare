@@ -1,4 +1,8 @@
-﻿using HotelShare.Domain.Enums;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using HotelShare.Domain.Enums;
 using HotelShare.Domain.Models.SqlModels.AccountModels;
 using HotelShare.Domain.Models.SqlModels.OrderModels;
 using HotelShare.Interfaces.DAL.Data;
@@ -8,10 +12,6 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 
 namespace HotelShare.Services.Services
 {
@@ -37,7 +37,7 @@ namespace HotelShare.Services.Services
 
         public void DeleteOrder(Guid userId)
         {
-            var order = _orderRepository.FirstOrDefault(a => a.CustomerId == userId && a.OrderStatus != OrderStatus.Shipped);
+            var order = _orderRepository.FirstOrDefault(a => a.CustomerId == userId && a.OrderStatus != OrderStatus.Paid);
 
             if (order != null)
             {
@@ -69,6 +69,13 @@ namespace HotelShare.Services.Services
                 _orderRepository.Update(order);
                 _unitOfWork.Commit();
             }
+        }
+
+        public IEnumerable<Order> GetOrderedRooms(Guid customerId)
+        {
+            var paidOrders = _orderRepository.GetMany(filter: x => x.OrderStatus == OrderStatus.Paid && x.OrderDate > DateTime.Now.AddDays(-30) && x.CustomerId == customerId, includes: x => x.OrderDetails);
+
+            return paidOrders;
         }
 
         public MemoryStream GenerateInvoiceFile(ProcessPaymentModel orderInfo)
@@ -152,7 +159,7 @@ namespace HotelShare.Services.Services
             }
 
             var isOrderExist = _orderRepository.GetMany(0, int.MaxValue, a => a.CustomerId == user.Id)
-                .Any(a => a.OrderStatus != OrderStatus.Shipped);
+                .Any(a => a.OrderStatus != OrderStatus.Paid);
             var totalPrice = (orderDetails.Price * orderDetails.Quantity) - ((orderDetails.Discount / 100) * orderDetails.Price);
             orderDetails.Price = totalPrice;
 
@@ -188,7 +195,7 @@ namespace HotelShare.Services.Services
                 }
             }
 
-            var currentOrder = _orderRepository.FirstOrDefault(a => a.CustomerId == user.Id && a.OrderStatus != OrderStatus.Shipped, includes: od => od.OrderDetails);
+            var currentOrder = _orderRepository.FirstOrDefault(a => a.CustomerId == user.Id && a.OrderStatus != OrderStatus.Paid, includes: od => od.OrderDetails);
 
             return currentOrder;
         }
@@ -237,7 +244,7 @@ namespace HotelShare.Services.Services
 
         private void UpdateExistingOrder(User user, ref OrderDetail orderDetails)
         {
-            var order = _orderRepository.FirstOrDefault(a => a.CustomerId == user.Id && a.OrderStatus != OrderStatus.Shipped, o => o.OrderDetails);
+            var order = _orderRepository.FirstOrDefault(a => a.CustomerId == user.Id && a.OrderStatus != OrderStatus.Paid, o => o.OrderDetails);
             var hotelId = orderDetails.RoomId;
             var isGameInBasket = order.OrderDetails.Any(a => a.RoomId == hotelId);
 

@@ -21,6 +21,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200603121448_valid.cs" />
+    <Compile Remove="Migrations\20200603121448_valid.Designer.cs" />
+    <Compile Remove="Migrations\20200603121602_validfix.cs" />
+    <Compile Remove="Migrations\20200603121602_validfix.Designer.cs" />
+    <Compile Remove="Migrations\20200603121716_fixvalid.cs" />
+    <Compile Remove="Migrations\20200603121716_fixvalid.Designer.cs" />
+    <Compile Remove="Migrations\20200603121835_fixvalidx.cs" />
+    <Compile Remove="Migrations\20200603121835_fixvalidx.Designer.cs" />
+    <Compile Remove="Migrations\20200603121948_fixvalid.cs" />
+    <Compile Remove="Migrations\20200603121948_fixvalid.Designer.cs" />
+    <Compile Remove="Migrations\20200603122412_valid.cs" />
+    <Compile Remove="Migrations\20200603122412_valid.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.3" />
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />

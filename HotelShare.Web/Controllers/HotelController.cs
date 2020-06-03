@@ -1,20 +1,21 @@
-﻿using AutoMapper;
-using HotelShare.Domain;
-using HotelShare.Domain.Enums;
-using HotelShare.Domain.Models.SqlModels.FilterModels;
-using HotelShare.Domain.Models.SqlModels.GameModels;
-using HotelShare.Interfaces.Services;
-using HotelShare.Web.Attributes;
-using HotelShare.Web.ViewModels.Comment;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using HotelShare.Domain;
+using HotelShare.Domain.Enums;
 using HotelShare.Domain.Models.SqlModels;
+using HotelShare.Domain.Models.SqlModels.FilterModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
+using HotelShare.Interfaces.Services;
+using HotelShare.Web.Attributes;
+using HotelShare.Web.Events;
+using HotelShare.Web.ViewModels.Comment;
 using HotelShare.Web.ViewModels.Hotel;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HotelShare.Web.Controllers
 {
@@ -243,7 +244,9 @@ namespace HotelShare.Web.Controllers
         [HttpGet("add/room")]
         public IActionResult AddRoom(Guid hotelId)
         {
-            var room = new Room {HotelId = hotelId};
+            var hotel = _hotelService.Get(hotelId);
+            new HotelNotification(hotel).NotifyUsers();
+            var room = new Room { HotelId = hotelId };
 
             return View(room);
         }
@@ -258,7 +261,7 @@ namespace HotelShare.Web.Controllers
 
             _roomService.CreateRoom(room);
 
-            return RedirectToAction("GetDetailsByKey", new {hotelId = room.HotelId});
+            return RedirectToAction("GetDetailsByKey", new { hotelId = room.HotelId });
         }
 
     }

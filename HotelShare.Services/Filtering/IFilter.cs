@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
-using HotelShare.Domain.Models.SqlModels.GameModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 
 namespace HotelShare.Services.Filtering
 {

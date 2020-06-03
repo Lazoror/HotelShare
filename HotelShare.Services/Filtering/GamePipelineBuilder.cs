@@ -1,6 +1,6 @@
 ﻿using HotelShare.Domain.Enums;
 using HotelShare.Domain.Models.SqlModels.FilterModels;
-using HotelShare.Domain.Models.SqlModels.GameModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 using System;
 using System.Linq.Expressions;
 
@@ -21,7 +21,7 @@ namespace HotelShare.Services.Filtering
         {
             if (!String.IsNullOrWhiteSpace(_filtersGameData.SearchString) && _filtersGameData.SearchString.Length >= 3)
             {
-                _hotelPipeline.Filters.Add(new GameSearchFilter(_filtersGameData.SearchString));
+                _hotelPipeline.Filters.Add(new HotelSearchFilter(_filtersGameData.SearchString));
             }
 
             return this;
@@ -58,7 +58,7 @@ namespace HotelShare.Services.Filtering
         }
         public Expression<Func<Hotel, bool>> Build()
         {
-            var result = _hotelPipeline.Process(g => g.City != "");
+            var result = _hotelPipeline.Process(g => g.Name != "");
             _hotelPipeline = new GamePipeline();
 
             return result;

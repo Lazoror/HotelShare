@@ -1,7 +1,7 @@
 ﻿using HotelShare.Domain.Enums;
 using HotelShare.Domain.Models.SqlModels;
 using HotelShare.Domain.Models.SqlModels.FilterModels;
-using HotelShare.Domain.Models.SqlModels.GameModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 using HotelShare.Interfaces.DAL.Data;
 using HotelShare.Interfaces.DAL.RepositorySql;
 using HotelShare.Interfaces.Services;
@@ -32,7 +32,6 @@ namespace HotelShare.Services.Services
 
         public void Create(Hotel entity)
         {
-            entity.AddDate = DateTime.UtcNow;
             entity.Id = Guid.NewGuid();
 
             _hotelRepository.Insert(entity);
@@ -74,7 +73,7 @@ namespace HotelShare.Services.Services
                 return;
             }
 
-            hotel.GameImages = new List<HotelImage>();
+            hotel.HotelImages = new List<HotelImage>();
 
             foreach (var imageName in imageNames)
             {
@@ -88,7 +87,7 @@ namespace HotelShare.Services.Services
                         HotelId = hotel.Id
                     };
 
-                    hotel.GameImages.Add(hotelImage);
+                    hotel.HotelImages.Add(hotelImage);
                 }
             }
 

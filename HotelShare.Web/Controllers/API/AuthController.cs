@@ -1,12 +1,11 @@
-﻿using HotelShare.Domain.Models.SqlModels.AccountModels;
-using HotelShare.Interfaces.Services;
-using HotelShare.Interfaces.Web.Settings;
-using HotelShare.Web.ViewModels.Account;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Web.Helpers;
+using HotelShare.Domain.Models.SqlModels.AccountModels;
+using HotelShare.Interfaces.Services;
+using HotelShare.Interfaces.Web.Settings;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HotelShare.Web.Controllers.API
 {
@@ -24,12 +23,12 @@ namespace HotelShare.Web.Controllers.API
             _tokenFactory = tokenFactory;
         }
 
-        [HttpPost("login")]
-        public IActionResult Token([FromForm]LoginViewModel credentials)
+        [HttpGet("login/{email}/{password}")]
+        public IActionResult Token(string email, string password)
         {
-            var user = _userService.GetUserByEmail(credentials.Email);
+            var user = _userService.GetUserByEmail(email);
 
-            if (user != null && Crypto.VerifyHashedPassword(user.Password, credentials.Password))
+            if (user != null && Crypto.VerifyHashedPassword(user.Password, password))
             {
                 return Ok(GenerateTokenForUser(user));
             }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using HotelShare.Domain.Models.SqlModels.FilterModels;
-using HotelShare.Domain.Models.SqlModels.GameModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 using HotelShare.Interfaces.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using HotelShare.Web.ViewModels.Hotel;
+using Newtonsoft.Json;
 
 namespace HotelShare.Web.Controllers.API
 {
@@ -38,7 +39,9 @@ namespace HotelShare.Web.Controllers.API
 
             if (hotels.Hotels.Any())
             {
-                return Ok(hotels);
+                var serializedHotels = JsonConvert.SerializeObject(hotels.Hotels);
+
+                return Ok(serializedHotels);
             }
 
             return NoContent();
@@ -51,7 +54,9 @@ namespace HotelShare.Web.Controllers.API
 
             if (hotel != null)
             {
-                return Ok(hotel);
+                var serializedHotel = JsonConvert.SerializeObject(hotel);
+
+                return Ok(serializedHotel);
             }
 
             return NoContent();
@@ -90,7 +95,7 @@ namespace HotelShare.Web.Controllers.API
             return StatusCode(400);
         }
 
-        [HttpPost("delete/{hotelId}")]
+        [HttpDelete("delete/{hotelId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]
         public IActionResult Remove(Guid hotelId)
         {
@@ -99,7 +104,7 @@ namespace HotelShare.Web.Controllers.API
             return Ok();
         }
 
-        [HttpPost("update/{hotelId}")]
+        [HttpPut("update/{hotelId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Manager")]
         public IActionResult Update([FromForm] HotelViewModel entity)
         {

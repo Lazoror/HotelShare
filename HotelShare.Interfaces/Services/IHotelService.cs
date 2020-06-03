@@ -1,5 +1,5 @@
 ﻿using HotelShare.Domain.Models.SqlModels.FilterModels;
-using HotelShare.Domain.Models.SqlModels.GameModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

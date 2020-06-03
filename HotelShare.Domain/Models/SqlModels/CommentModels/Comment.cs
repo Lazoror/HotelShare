@@ -1,5 +1,5 @@
 ﻿using System;
-using HotelShare.Domain.Models.SqlModels.GameModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 using Newtonsoft.Json;
 
 namespace HotelShare.Domain.Models.SqlModels.CommentModels

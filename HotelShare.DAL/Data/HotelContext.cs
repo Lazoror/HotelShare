@@ -5,7 +5,7 @@ using HotelShare.DAL.EntityConfigurations.Order;
 using HotelShare.Domain.Models.SqlModels;
 using HotelShare.Domain.Models.SqlModels.AccountModels;
 using HotelShare.Domain.Models.SqlModels.CommentModels;
-using HotelShare.Domain.Models.SqlModels.GameModels;
+using HotelShare.Domain.Models.SqlModels.HotelModels;
 using HotelShare.Domain.Models.SqlModels.OrderModels;
 using Microsoft.EntityFrameworkCore;
 

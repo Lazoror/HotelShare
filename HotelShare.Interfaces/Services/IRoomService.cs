@@ -8,6 +8,8 @@ namespace HotelShare.Interfaces.Services
     {
         IEnumerable<Room> GetAllRooms();
 
+        IEnumerable<Room> GetHotelRooms(Guid hotelId);
+
         IEnumerable<string> GetAllRoomCompanyNames();
 
         Room Get(Guid roomId);

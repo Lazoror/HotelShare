@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HotelShare.Domain.Models.SqlModels.GameModels
+namespace HotelShare.Domain.Models.SqlModels.HotelModels
 {
     public class HotelImage
     {
